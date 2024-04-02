@@ -18,6 +18,9 @@
   }
 }
 
+.hero-container {
+  height: calc(100vh + 86px);
+}
 .ofb-shadow {
   box-shadow:
     0 10px 22px 0 rgba(0, 0, 0, 0.15),

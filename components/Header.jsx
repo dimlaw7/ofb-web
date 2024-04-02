@@ -2,33 +2,33 @@ import Image from "next/image";
 
 const Header = () => {
   return (
-    <header className="flex items-center justify-between bg-[#EAE1F3] px-8 py-4">
+    <header className="sticky top-0 z-50 flex items-center justify-between bg-[#EAE1F3] px-8 py-4">
       <div className="flex items-center">
         <Image src="/images/food-basket.png" width={40} height={43} />
-        <h6 className="text-purp font-pacifico text-2xl">FoodBasket</h6>
+        <h6 className="font-pacifico text-2xl text-purp">FoodBasket</h6>
       </div>
       <div className="flex gap-6">
-        <a href="" className="text-purp font-jost font-semibold">
+        <a href="" className="font-jost font-semibold text-purp">
           Home
         </a>
-        <a href="" className="text-purp font-jost">
+        <a href="" className="font-jost text-purp">
           Mission
         </a>
-        <a href="" className="text-purp font-jost">
+        <a href="" className="font-jost text-purp">
           Food Fund
         </a>
-        <a href="" className="text-purp font-jost">
+        <a href="" className="font-jost text-purp">
           About
         </a>
       </div>
       <div className="flex gap-11">
         <a href="">
-          <button className="border-purp text-purp rounded-full border px-8 py-4 text-sm font-semibold">
+          <button className="rounded-full border border-purp px-8 py-4 text-sm font-semibold text-purp">
             Login
           </button>
         </a>
         <a href="">
-          <button className="bg-purp rounded-full px-8 py-4 text-sm font-semibold text-white">
+          <button className="rounded-full bg-purp px-8 py-4 text-sm font-semibold text-white">
             Register
           </button>
         </a>
