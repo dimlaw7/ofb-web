@@ -24,12 +24,12 @@ const Hero = () => {
             </div>
             <div className="flex gap-4">
               <a>
-                <button className="ofb-shadow rounded-full bg-purp px-8 py-4 text-sm font-semibold text-white">
+                <button className="ofb-shadow rounded-full bg-purp px-8 py-4 text-sm font-semibold text-white hover:bg-purple-900">
                   Get Started
                 </button>
               </a>
               <a>
-                <button className="flex gap-2 rounded-full border border-[#E5E4E4] bg-white px-8 py-4 text-sm font-semibold">
+                <button className="flex gap-2 rounded-full border border-[#E5E4E4] bg-white px-8 py-4 text-sm font-semibold hover:border-purp">
                   <Image src="/icons/play.svg" width={24} height={24} />
                   Watch Demo
                 </button>
@@ -50,10 +50,10 @@ const Hero = () => {
               height={578}
               className="relative top-20 z-20"
             />
-            <div className="ofb-shadow absolute left-[60%] top-[70%] flex h-[60px] w-[60px] items-center justify-center rounded-full bg-sec">
+            <div className="send-icon ofb-shadow absolute left-[60%] top-[70%] flex h-[60px] w-[60px] items-center justify-center rounded-full bg-sec">
               <Image src="/icons/send.svg" width={32} height={32} />
             </div>
-            <div className="ofb-shadow absolute left-[90%] top-[40%] flex h-[60px] w-[60px] items-center justify-center rounded-full bg-yel">
+            <div className="user-icon ofb-shadow absolute left-[90%] top-[40%] flex h-[60px] w-[60px] items-center justify-center rounded-full bg-yel">
               <Image src="/icons/add-user.svg" width={32} height={32} />
             </div>
           </div>

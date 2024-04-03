@@ -1,3 +1,10 @@
+export const navLinks = [
+  { title: "Home", url: "/" },
+  { title: "Mission", url: "" },
+  { title: "Food Fund", url: "" },
+  { title: "About", url: "" },
+];
+
 export const services = [
   {
     title: "Savings Plan",

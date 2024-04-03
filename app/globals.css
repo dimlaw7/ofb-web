@@ -41,3 +41,61 @@
   font-size: 18px;
   padding-bottom: 24px;
 }
+
+.send-icon {
+  animation-name: rotate-send;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+}
+
+.user-icon {
+  animation-name: rotate-user;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotate-send {
+  0% {
+    left: 60%;
+    top: 70%;
+  }
+  25% {
+    left: 90%;
+    top: 70%;
+  }
+  50% {
+    left: 90%;
+    top: 40%;
+  }
+  75% {
+    left: 60%;
+    top: 40%;
+  }
+  100% {
+    left: 60%;
+    top: 70%;
+  }
+}
+
+@keyframes rotate-user {
+  0% {
+    left: 90%;
+    top: 40%;
+  }
+  25% {
+    left: 60%;
+    top: 40%;
+  }
+  50% {
+    left: 60%;
+    top: 70%;
+  }
+  75% {
+    left: 90%;
+    top: 70%;
+  }
+  100% {
+    left: 90%;
+    top: 40%;
+  }
+}
