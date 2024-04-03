@@ -7,8 +7,8 @@ const Header = () => {
         <Image src="/images/food-basket.png" width={40} height={43} />
         <h6 className="font-pacifico text-2xl text-purp">FoodBasket</h6>
       </div>
-      <div className="flex gap-6">
-        <a href="" className="font-jost font-semibold text-purp">
+      <div className="flex gap-8">
+        <a href="" className="font-jost text-purp">
           Home
         </a>
         <a href="" className="font-jost text-purp">

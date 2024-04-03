@@ -3,9 +3,13 @@ import Image from "next/image";
 const Hero = () => {
   return (
     <>
-      <div className="ellipse absolute -left-[20%] -top-[50%] z-10 h-[500px] w-[500px] rounded-full bg-sec blur-[400px]"></div>
-      <div className="ellipse absolute -bottom-[50%] -right-[20%] z-10 h-[500px] w-[500px] rounded-full bg-yel blur-[400px]"></div>
+      <div className="ellipse absolute -left-[20%] -top-[50%] z-10 h-[500px] w-[500px] rounded-full bg-sec blur-[400px]">
+        {/* Blur Pink ellipse floating in hero */}
+      </div>
       <section className="hero relative overflow-hidden bg-[#EAE1F3]">
+        <div className="ellipse absolute -bottom-[50%] -right-[20%] z-10 h-[500px] w-[500px] rounded-full bg-yel blur-[200px]">
+          {/* Blur Yellow ellipse floating in hero */}
+        </div>
         <div className="hero-container container mx-auto flex items-center">
           <div data-aos="zoom-in" className="flex w-7/12 flex-col gap-16">
             <div className="flex flex-col gap-8">
@@ -44,12 +48,12 @@ const Hero = () => {
               src="/images/App-Mockup.png"
               width={283}
               height={578}
-              className="relative top-20"
+              className="relative top-20 z-20"
             />
-            <div className="ofb-shadow absolute left-[60%] top-[40%] flex h-[60px] w-[60px] items-center justify-center rounded-full bg-sec">
+            <div className="ofb-shadow absolute left-[60%] top-[70%] flex h-[60px] w-[60px] items-center justify-center rounded-full bg-sec">
               <Image src="/icons/send.svg" width={32} height={32} />
             </div>
-            <div className="ofb-shadow absolute left-[90%] top-[80%] flex h-[60px] w-[60px] items-center justify-center rounded-full bg-yel">
+            <div className="ofb-shadow absolute left-[90%] top-[40%] flex h-[60px] w-[60px] items-center justify-center rounded-full bg-yel">
               <Image src="/icons/add-user.svg" width={32} height={32} />
             </div>
           </div>

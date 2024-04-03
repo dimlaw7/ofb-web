@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -19,12 +19,25 @@
 }
 
 .hero-container {
-  height: calc(100vh + 86px);
+  height: calc(100vh + 111px);
 }
+
 .ofb-shadow {
   box-shadow:
     0 10px 22px 0 rgba(0, 0, 0, 0.15),
     0 40px 40px 0 rgba(0, 0, 0, 0.13),
     0 90px 53px 0 rgba(0, 0, 0, 0.08),
     0 159px 64px 0 rgba(0, 0, 0, 0.02);
+}
+
+.foot-col a {
+  display: block;
+  padding-bottom: 24px;
+  color: #00000080;
+}
+
+.foot-col h6 {
+  font-weight: 700;
+  font-size: 18px;
+  padding-bottom: 24px;
 }

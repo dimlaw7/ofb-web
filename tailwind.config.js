@@ -22,6 +22,7 @@ module.exports = {
         jost: ["Jost", "sans-serif"],
         pacifico: ["Pacifico", "sans-serif"],
         openSans: ["Open-Sans", "sans-serif"],
+        rubik: ["Rubik", "sans-serif"],
       },
     },
   },
