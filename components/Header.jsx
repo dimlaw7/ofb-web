@@ -4,14 +4,14 @@ import { navLinks } from "@/const";
 const Header = () => {
   return (
     <header className="sticky top-0 z-50 flex items-center justify-between bg-[#EAE1F3] px-8 py-4">
-      <div className="flex items-center">
+      <a href="/" className="flex items-center">
         <Image src="/images/food-basket.png" width={40} height={43} />
         <h6 className="font-pacifico text-2xl text-purp">FoodBasket</h6>
-      </div>
+      </a>
       <div className="flex gap-8">
         {navLinks.map((item, index) => (
           <a
-            href=""
+            href={item.url}
             className="font-jost text-purp hover:underline"
             key={index}
           >

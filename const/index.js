@@ -1,6 +1,6 @@
 export const navLinks = [
   { title: "Home", url: "/" },
-  { title: "Mission", url: "" },
+  { title: "Get Started", url: "/get-started" },
   { title: "Food Fund", url: "" },
   { title: "About", url: "" },
 ];

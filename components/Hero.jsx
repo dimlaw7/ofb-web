@@ -23,7 +23,7 @@ const Hero = () => {
               </p>
             </div>
             <div className="flex gap-4">
-              <a>
+              <a href="/get-started">
                 <button className="ofb-shadow rounded-full bg-purp px-8 py-4 text-sm font-semibold text-white hover:bg-purple-900">
                   Get Started
                 </button>
