@@ -1,7 +1,7 @@
 export const navLinks = [
   { title: "Home", url: "/" },
   { title: "Get Started", url: "/get-started" },
-  { title: "Food Fund", url: "" },
+  { title: "Testimonies", url: "/testimonies" },
   { title: "About", url: "" },
 ];
 
@@ -54,3 +54,36 @@ export const footerLinks = {
     { title: "", url: "" },
   ],
 };
+
+export const testimonies = [
+  {
+    name: "Lawal Ibironke",
+    comment:
+      "With our platform, you can conveniently shop for all your household needs from the comfort of your home.     ",
+  },
+  {
+    name: "Odunlami Sadiat",
+    comment:
+      "Enjoy a bountiful spread of delicious food items, beverages, and household essentials, all sourced at discounted rates exclusively for our members.",
+  },
+  {
+    name: "Lawrence Daniel",
+    comment:
+      "Join a vibrant community of like-minded individuals committed to promoting a culture of saving and sharing.",
+  },
+  {
+    name: "Blessing K.",
+    comment:
+      "With our platform, you can conveniently shop for all your household needs from the comfort of your home.     ",
+  },
+  {
+    name: "Jason Okafor",
+    comment:
+      "Enjoy a bountiful spread of delicious food items, beverages, and household essentials, all sourced at discounted rates exclusively for our members.",
+  },
+  {
+    name: "Kolawole O.",
+    comment:
+      "Join a vibrant community of like-minded individuals committed to promoting a culture of saving and sharing.",
+  },
+];

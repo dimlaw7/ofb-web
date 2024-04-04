@@ -11,7 +11,7 @@ const Hero = () => {
           {/* Blur Yellow ellipse floating in hero */}
         </div>
         <div className="hero-container container relative z-10 mx-auto flex flex-col items-center justify-center px-8 lg:flex-row lg:px-0">
-          <div data-aos="zoom-in" className="flex flex-col gap-16 lg:w-7/12">
+          <div className="flex flex-col gap-16 lg:w-7/12">
             <div className="flex flex-col gap-8">
               <h1 className="text text-2xl font-extrabold leading-normal lg:text-[53px]">
                 Ticket to year-round savings{" "}

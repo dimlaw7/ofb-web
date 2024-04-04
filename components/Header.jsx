@@ -25,12 +25,12 @@ const Header = () => {
         ))}
       </nav>
       <nav className="hidden gap-11 lg:flex">
-        <a href="">
+        <a href="/login">
           <button className="rounded-full border border-purp px-8 py-4 text-sm font-semibold text-purp hover:shadow-lg">
             Login
           </button>
         </a>
-        <a href="">
+        <a href="/register">
           <button className="rounded-full bg-purp px-8 py-4 text-sm font-semibold text-white hover:bg-purple-900">
             Register
           </button>
