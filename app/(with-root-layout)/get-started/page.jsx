@@ -1,4 +1,10 @@
 import Image from "next/image";
+
+export const metadata = {
+  title: "Get Started With FoodBasket",
+  description: "The Quick Way To Start With FoodBasket",
+};
+
 const page = () => {
   return (
     <>

@@ -1,11 +1,16 @@
 import Image from "next/image";
 import { testimonies } from "@/const";
 
+export const metadata = {
+  title: "Testimonies From Members of FoodBasket",
+  description: "Get inspired with testimonies from Members",
+};
+
 const page = () => {
   return (
     <>
       <section>
-        <div className="hero bg-hero-testimonies relative flex h-[80vh] items-center before:absolute before:left-0 before:right-0 before:h-full before:bg-[#00000080] lg:h-[620px]">
+        <div className="hero relative flex h-[80vh] items-center bg-hero-testimonies before:absolute before:left-0 before:right-0 before:h-full before:bg-[#00000080] lg:h-[620px]">
           <div className="hero-data relative z-10 flex flex-col gap-2 bg-white px-8 py-4 lg:ml-44 lg:w-[636px]">
             <h1 className="text-2xl font-extrabold lg:text-4xl lg:leading-[70px]">
               Get inspired with testimonies from Members

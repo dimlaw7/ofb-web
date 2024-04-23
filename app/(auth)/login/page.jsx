@@ -6,6 +6,11 @@ import ReturnHome from "@/components/ReturnHome";
 import LoginForm from "@/components/auth/LoginForm";
 import Link from "next/link";
 
+export const metadata = {
+  title: "FoodBasket | Login",
+  description: "Login with your account to access FoodBasket Dashboard.",
+};
+
 const page = () => {
   const cookieStore = cookies();
   const token = cookieStore.get("token");

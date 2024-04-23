@@ -2,7 +2,7 @@ import { Inter } from "next/font/google";
 import "@/app/(with-root-layout)/globals.css";
 
 export const metadata = {
-  title: "Create Your Account | OFB",
+  title: "FoodBasket | Create Your Account",
   description:
     "Register for an account on OFB to access exclusive features. Join our community today and get started",
 };

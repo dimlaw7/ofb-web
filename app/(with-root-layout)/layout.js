@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Food Basket",
+  title: "Ticket to year-round savings and abundant holiday meals | FoodBasket",
   description: "Ticket to abundant holiday meals",
 };
 
