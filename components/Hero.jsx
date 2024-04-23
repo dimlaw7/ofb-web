@@ -29,7 +29,7 @@ const Hero = () => {
                 </button>
               </a>
               <a>
-                <button className="flex gap-2 rounded-full border border-[#E5E4E4] bg-white px-4 py-2 text-sm font-semibold hover:border-purp lg:px-8 lg:py-4">
+                <button className="flex items-center gap-2 rounded-full border border-[#E5E4E4] bg-white px-4 py-2 text-sm font-semibold hover:border-purp lg:px-8 lg:py-4">
                   <Image src="/icons/play.svg" width={22} height={22} />
                   Watch Demo
                 </button>
