@@ -4,6 +4,7 @@ import jwt from "jsonwebtoken";
 import Sidebar from "@/components/auth/Sidebar";
 import ReturnHome from "@/components/ReturnHome";
 import LoginForm from "@/components/auth/LoginForm";
+import Link from "next/link";
 
 const page = () => {
   const cookieStore = cookies();
@@ -11,22 +12,22 @@ const page = () => {
   if (!token) {
     // Render login form if token is not present
     return (
-      <div className="flex items-center">
+      <div className="flex h-screen items-center justify-center">
         <ReturnHome />
-        <div className="left max-h-screen w-4/12 overflow-y-auto px-16 py-8">
-          <h1 className="text-center text-4xl font-extrabold leading-[70px]">
+        <div className="left max-h-screen overflow-y-auto px-8 py-8 lg:w-4/12 lg:px-16">
+          <h1 className="text-center text-2xl font-extrabold leading-[70px] sm:text-4xl sm:leading-[70px]">
             Account Login
           </h1>
-          <p className="text-center text-[#00000080]">
+          <p className="text-center text-sm text-[#00000080] lg:text-base">
             Welcome back! Sign In to continue
           </p>
           <LoginForm />
           <div className="mt-4">
             <p className="text-sm">
               Don't have an account?{" "}
-              <a href="/register" className="font-bold text-purp">
+              <Link href="/register" className="font-bold text-purp">
                 Register
-              </a>
+              </Link>
             </p>
           </div>
         </div>
@@ -56,9 +57,9 @@ const page = () => {
             <div className="mt-4">
               <p className="text-sm">
                 Don't have an account?{" "}
-                <a href="/register" className="font-bold text-purp">
+                <Link href="/register" className="font-bold text-purp">
                   Register
-                </a>
+                </Link>
               </p>
             </div>
           </div>

@@ -90,7 +90,7 @@ const LoginForm = () => {
       </label>
       <input
         required
-        type="text"
+        type="password"
         name="pass"
         id="pass"
         value={data.pass}

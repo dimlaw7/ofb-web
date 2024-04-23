@@ -5,6 +5,7 @@ import Form2 from "@/components/auth/Form2";
 import Form3 from "@/components/auth/Form3";
 import Sidebar from "@/components/auth/Sidebar";
 import ReturnHome from "@/components/ReturnHome";
+import Link from "next/link";
 
 const page = () => {
   const [activeForm, setActiveForm] = useState(0);
@@ -24,22 +25,22 @@ const page = () => {
     <Form3 data={data} setData={setData} />,
   ];
   return (
-    <div className="flex items-center">
+    <div className="flex h-screen items-center justify-center">
       <ReturnHome />
-      <div className="left max-h-screen w-4/12 overflow-y-auto px-16 py-8">
-        <h1 className="text-center text-4xl font-extrabold leading-[70px]">
+      <div className="left max-h-screen overflow-y-auto px-8 py-8 lg:w-4/12 lg:px-16">
+        <h1 className="text-center text-2xl font-extrabold leading-[70px] sm:text-4xl sm:leading-[70px]">
           Create Account
         </h1>
-        <p className="text-center text-[#00000080]">
+        <p className="text-center text-sm text-[#00000080] lg:text-base">
           Create an account in few seconds
         </p>
         {formElements[activeForm]}
         <div className="mt-4">
           <p className="text-sm">
             Already have an account?{" "}
-            <a href="/login" className="font-bold text-purp">
+            <Link href="/login" className="font-bold text-purp">
               Log In
-            </a>
+            </Link>
           </p>
         </div>
       </div>

@@ -150,7 +150,7 @@ const Form3 = ({ data, setData }) => {
         Password <span className="text-red-500">*</span>
       </label>
       <input
-        type="text"
+        type="password"
         name="pass"
         id="pass"
         className="w-full border border-purple-300"
@@ -167,7 +167,7 @@ const Form3 = ({ data, setData }) => {
         Confirm Password <span className="text-red-500">*</span>
       </label>
       <input
-        type="text"
+        type="password"
         name="pass2"
         id="pass2"
         className="w-full border border-purple-300"
