@@ -43,8 +43,15 @@ export async function POST(request) {
       throw new Error("Password is Incorrect");
     }
 
+    const [sqlData] = results;
+
     const token = jwt.sign(
-      { username: results[0].user },
+      {
+        username: sqlData.user,
+        firstName: sqlData.firstName,
+        lastName: sqlData.LastName,
+        wallet: sqlData.Wallet,
+      },
       process.env.JWT_SECRET,
       {
         expiresIn: "1h",

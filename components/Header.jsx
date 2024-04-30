@@ -3,15 +3,13 @@ import { useState } from "react";
 import Image from "next/image";
 import { navLinks } from "@/const";
 import Link from "next/link";
+import HeaderLogo from "./HeaderLogo";
 
 const Header = () => {
   const [navBar, setnavBar] = useState(false);
   return (
     <header className="sticky top-0 z-50 flex items-center justify-between bg-[#EAE1F3] px-8 py-4">
-      <Link href="/" className="flex items-center">
-        <Image src="/images/food-basket.png" width={40} height={43} />
-        <h6 className="font-pacifico text-2xl text-purp">FoodBasket</h6>
-      </Link>
+      <HeaderLogo css="text-purp" />
       <nav
         className={`flex transition-all max-sm:absolute max-sm:top-[73px] max-sm:min-h-screen max-sm:w-3/4 max-sm:flex-col max-sm:bg-inherit lg:gap-8 ${navBar == true ? "max-sm:left-0" : "max-sm:-left-full"}`}
       >

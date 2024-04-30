@@ -1,4 +1,3 @@
-import { Inter } from "next/font/google";
 import "@/app/(with-root-layout)/globals.css";
 
 export const metadata = {

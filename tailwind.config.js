@@ -10,6 +10,7 @@ module.exports = {
       backgroundImage: {
         "hero-register": "url(/images/hero-register.jpg)",
         "hero-testimonies": "url(/images/hero-testimonies.jpg)",
+        "package-design": "url(/images/bg-pattern.png)",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
@@ -19,6 +20,7 @@ module.exports = {
         sec: "#F85E95",
         yel: "#FACD49",
         light: "#E5E4E4",
+        "purp-60": "rgba(234,225,243,0.6)",
       },
       fontFamily: {
         jost: ["Jost", "sans-serif"],

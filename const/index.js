@@ -87,3 +87,15 @@ export const testimonies = [
       "Join a vibrant community of like-minded individuals committed to promoting a culture of saving and sharing.",
   },
 ];
+
+export const dashboardNavLinks = [
+  {
+    title: "Dashboard",
+    url: "/dashboard",
+    icon: "/icons/dashicons_dashboard.svg",
+  },
+  { title: "Wallet", url: "", icon: "/icons/wallet.svg" },
+  { title: "Loan", url: "", icon: "/icons/loan.svg" },
+  { title: "Account", url: "", icon: "/icons/account.svg" },
+  { title: "Logout", url: "", icon: "/icons/logout.svg" },
+];
