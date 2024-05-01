@@ -8,16 +8,16 @@ import HeaderLogo from "./HeaderLogo";
 const Header = () => {
   const [navBar, setnavBar] = useState(false);
   return (
-    <header className="sticky top-0 z-50 flex items-center justify-between bg-[#EAE1F3] px-8 py-4">
+    <header className="sticky top-2 z-50 mx-auto flex w-[95%] items-center justify-between rounded-2xl border border-[#EAE1F3] bg-white px-8 py-4 shadow-lg lg:top-8">
       <HeaderLogo css="text-purp" />
       <nav
-        className={`flex transition-all max-sm:absolute max-sm:top-[73px] max-sm:min-h-screen max-sm:w-3/4 max-sm:flex-col max-sm:bg-inherit lg:gap-8 ${navBar == true ? "max-sm:left-0" : "max-sm:-left-full"}`}
+        className={`flex overflow-y-hidden transition-all max-sm:absolute max-sm:left-2 max-sm:right-2  max-sm:top-[73px] max-sm:flex-col max-sm:bg-inherit lg:gap-8 ${navBar != true ? "opacity-0 max-sm:h-0" : "opacity-100 max-sm:h-[50vh]"}`}
       >
         {navLinks.map((item, index) => (
           <div key={index}>
             <Link
               href={item.url}
-              className="font-jost text-purp hover:underline max-sm:px-8 max-sm:py-4"
+              className="text-sm font-bold text-purp hover:underline max-sm:px-8 max-sm:py-4"
             >
               {item.title}
             </Link>
@@ -26,18 +26,48 @@ const Header = () => {
       </nav>
       <nav className="hidden gap-11 lg:flex">
         <Link href="/login">
-          <button className="rounded-full border border-purp px-8 py-4 text-sm font-semibold text-purp hover:shadow-lg">
+          <button className="h-10 w-28 rounded-xl border border-purp text-sm font-semibold text-purp hover:shadow-lg">
             Login
           </button>
         </Link>
         <Link href="/register">
-          <button className="rounded-full bg-purp px-8 py-4 text-sm font-semibold text-white hover:bg-purple-900">
+          <button className="h-10 w-28 rounded-xl bg-purp text-sm font-semibold text-white hover:bg-purple-900">
             Register
           </button>
         </Link>
       </nav>
       <div className="hamburger lg:hidden" onClick={() => setnavBar(!navBar)}>
-        <Image src="/icons/hamburger.svg" width={30} height={30} />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="30"
+          height="30"
+          viewBox="0 0 30 30"
+          fill="none"
+        >
+          <g clipPath="url(#clip0_1603_1994)">
+            <path
+              d="M5.83333 0H3.33333C2.44928 0 1.60143 0.35119 0.976311 0.976311C0.35119 1.60143 0 2.44928 0 3.33333L0 5.83333C0 6.71739 0.35119 7.56524 0.976311 8.19036C1.60143 8.81548 2.44928 9.16667 3.33333 9.16667H5.83333C6.71739 9.16667 7.56524 8.81548 8.19036 8.19036C8.81548 7.56524 9.16667 6.71739 9.16667 5.83333V3.33333C9.16667 2.44928 8.81548 1.60143 8.19036 0.976311C7.56524 0.35119 6.71739 0 5.83333 0ZM7.5 5.83333C7.5 6.27536 7.32441 6.69928 7.01184 7.01184C6.69928 7.32441 6.27536 7.5 5.83333 7.5H3.33333C2.89131 7.5 2.46738 7.32441 2.15482 7.01184C1.84226 6.69928 1.66667 6.27536 1.66667 5.83333V3.33333C1.66667 2.89131 1.84226 2.46738 2.15482 2.15482C2.46738 1.84226 2.89131 1.66667 3.33333 1.66667H5.83333C6.27536 1.66667 6.69928 1.84226 7.01184 2.15482C7.32441 2.46738 7.5 2.89131 7.5 3.33333V5.83333Z"
+              fill="black"
+            ></path>
+            <path
+              d="M16.6673 0H14.1673C13.2833 0 12.4354 0.35119 11.8103 0.976311C11.1852 1.60143 10.834 2.44928 10.834 3.33333V5.83333C10.834 6.71739 11.1852 7.56524 11.8103 8.19036C12.4354 8.81548 13.2833 9.16667 14.1673 9.16667H16.6673C17.5514 9.16667 18.3992 8.81548 19.0243 8.19036C19.6495 7.56524 20.0007 6.71739 20.0007 5.83333V3.33333C20.0007 2.44928 19.6495 1.60143 19.0243 0.976311C18.3992 0.35119 17.5514 0 16.6673 0ZM18.334 5.83333C18.334 6.27536 18.1584 6.69928 17.8458 7.01184C17.5333 7.32441 17.1093 7.5 16.6673 7.5H14.1673C13.7253 7.5 13.3014 7.32441 12.9888 7.01184C12.6762 6.69928 12.5007 6.27536 12.5007 5.83333V3.33333C12.5007 2.89131 12.6762 2.46738 12.9888 2.15482C13.3014 1.84226 13.7253 1.66667 14.1673 1.66667H16.6673C17.1093 1.66667 17.5333 1.84226 17.8458 2.15482C18.1584 2.46738 18.334 2.89131 18.334 3.33333V5.83333Z"
+              fill="black"
+            ></path>
+            <path
+              d="M5.83333 10.8333H3.33333C2.44928 10.8333 1.60143 11.1845 0.976311 11.8097C0.35119 12.4348 0 13.2826 0 14.1667L0 16.6667C0 17.5507 0.35119 18.3986 0.976311 19.0237C1.60143 19.6488 2.44928 20 3.33333 20H5.83333C6.71739 20 7.56524 19.6488 8.19036 19.0237C8.81548 18.3986 9.16667 17.5507 9.16667 16.6667V14.1667C9.16667 13.2826 8.81548 12.4348 8.19036 11.8097C7.56524 11.1845 6.71739 10.8333 5.83333 10.8333ZM7.5 16.6667C7.5 17.1087 7.32441 17.5326 7.01184 17.8452C6.69928 18.1577 6.27536 18.3333 5.83333 18.3333H3.33333C2.89131 18.3333 2.46738 18.1577 2.15482 17.8452C1.84226 17.5326 1.66667 17.1087 1.66667 16.6667V14.1667C1.66667 13.7246 1.84226 13.3007 2.15482 12.9882C2.46738 12.6756 2.89131 12.5 3.33333 12.5H5.83333C6.27536 12.5 6.69928 12.6756 7.01184 12.9882C7.32441 13.3007 7.5 13.7246 7.5 14.1667V16.6667Z"
+              fill="black"
+            ></path>
+            <path
+              d="M16.6673 10.8333H14.1673C13.2833 10.8333 12.4354 11.1845 11.8103 11.8097C11.1852 12.4348 10.834 13.2826 10.834 14.1667V16.6667C10.834 17.5507 11.1852 18.3986 11.8103 19.0237C12.4354 19.6488 13.2833 20 14.1673 20H16.6673C17.5514 20 18.3992 19.6488 19.0243 19.0237C19.6495 18.3986 20.0007 17.5507 20.0007 16.6667V14.1667C20.0007 13.2826 19.6495 12.4348 19.0243 11.8097C18.3992 11.1845 17.5514 10.8333 16.6673 10.8333ZM18.334 16.6667C18.334 17.1087 18.1584 17.5326 17.8458 17.8452C17.5333 18.1577 17.1093 18.3333 16.6673 18.3333H14.1673C13.7253 18.3333 13.3014 18.1577 12.9888 17.8452C12.6762 17.5326 12.5007 17.1087 12.5007 16.6667V14.1667C12.5007 13.7246 12.6762 13.3007 12.9888 12.9882C13.3014 12.6756 13.7253 12.5 14.1673 12.5H16.6673C17.1093 12.5 17.5333 12.6756 17.8458 12.9882C18.1584 13.3007 18.334 13.7246 18.334 14.1667V16.6667Z"
+              fill="black"
+            ></path>
+          </g>
+          <defs>
+            <clipPath id="clip0_1603_1994">
+              <rect width="20" height="20" fill="white"></rect>
+            </clipPath>
+          </defs>
+        </svg>
       </div>
     </header>
   );

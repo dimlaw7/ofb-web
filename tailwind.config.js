@@ -27,6 +27,7 @@ module.exports = {
         pacifico: ["Pacifico", "sans-serif"],
         openSans: ["Open-Sans", "sans-serif"],
         rubik: ["Rubik", "sans-serif"],
+        sora: ["Sora", "sans-serif"],
       },
     },
   },

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -39,12 +39,6 @@
 
 .hero-container {
   height: calc(80vh);
-}
-
-@media screen and (min-width: 1024px) {
-  .hero-container {
-    height: calc(100vh + 111px);
-  }
 }
 
 .foot-col a {
