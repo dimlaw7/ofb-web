@@ -1,7 +1,7 @@
 const ActivitySlip = ({ type }) => {
   if (type == "credit") {
     return (
-      <div className="slip mt-8 flex w-[546px] items-center justify-between rounded-3xl border border-[#cecece] p-2">
+      <div className="slip mt-8 flex w-full items-center justify-between rounded-3xl border border-[#cecece] p-2 lg:w-[546px]">
         <div className="slip-det flex items-center text-sm">
           <svg
             width="51"

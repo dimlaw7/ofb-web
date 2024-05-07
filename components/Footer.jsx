@@ -6,7 +6,13 @@ const Footer = () => {
       <div className=" container mx-auto flex flex-col justify-between lg:flex-row">
         <div className="company max-sm:mb-16 lg:w-5/12">
           <div className="mb-4 flex items-center">
-            <Image src="/images/food-basket.png" width={40} height={43} />
+            <Image
+              src="/images/food-basket.png"
+              width={40}
+              height={43}
+              alt="food-basket"
+              style={{ height: "43px", width: "40px" }}
+            />
             <h6 className="font-pacifico text-2xl text-purp">FoodBasket</h6>
           </div>
           <p className="text-sm leading-6">

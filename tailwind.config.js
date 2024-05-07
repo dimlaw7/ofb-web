@@ -21,6 +21,7 @@ module.exports = {
         yel: "#FACD49",
         light: "#E5E4E4",
         "purp-60": "rgba(234,225,243,0.6)",
+        greyscale: "#718096",
       },
       fontFamily: {
         jost: ["Jost", "sans-serif"],
@@ -28,6 +29,7 @@ module.exports = {
         openSans: ["Open-Sans", "sans-serif"],
         rubik: ["Rubik", "sans-serif"],
         sora: ["Sora", "sans-serif"],
+        Poppins: ["Poppins", "sans-serif"],
       },
     },
   },

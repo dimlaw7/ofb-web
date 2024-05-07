@@ -75,7 +75,7 @@ const LoginForm = () => {
         name="email"
         id="email"
         value={data.email}
-        className="w-full border border-purple-300"
+        className="w-full border border-purple-300 text-base"
         placeholder="First Name"
         onInput={(evt) => {
           const { name, value } = evt.target;
@@ -94,7 +94,7 @@ const LoginForm = () => {
         name="pass"
         id="pass"
         value={data.pass}
-        className="w-full border border-purple-300"
+        className="w-full border border-purple-300 text-base"
         placeholder="Last Name"
         onInput={(evt) => {
           const { name, value } = evt.target;

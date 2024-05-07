@@ -4,7 +4,7 @@ import { dashboardNavLinks } from "@/const";
 
 const SideNav = () => {
   return (
-    <aside className="nav w-64 bg-purp pt-4">
+    <aside className="nav hidden w-64 bg-purp pt-4 lg:block">
       <div className="logo-hamburger-search mx-6">
         <div className="logo-hamburger flex items-center justify-between">
           <HeaderLogo css="text-white" />
@@ -31,13 +31,14 @@ const SideNav = () => {
             name=""
             id=""
             placeholder="Search Something"
-            className="w-full border bg-purp-60 text-white placeholder:text-white"
+            className="w-full border bg-transparent text-white"
           />
           <Image
             src="/icons/dash_search.svg"
             width={24}
             height={24}
             className="absolute right-2 top-2"
+            alt="Search"
           />
         </div>
       </div>
@@ -49,13 +50,20 @@ const SideNav = () => {
           >
             <a href="" className="flex text-white">
               <div>
-                <Image src={item.icon} width={24} height={24} />
+                <Image src={item.icon} width={24} height={24} alt="icon" />
               </div>
-              <span className="font-base ml-4 font-semibold">{item.title}</span>
+              <span className="ml-4 text-sm ">{item.title}</span>
             </a>
           </div>
         ))}
       </nav>
+      <div className="dp-profile mt-12 flex items-center px-9">
+        <div className="h-7 w-7 rounded-full bg-red-700"></div>
+        <div className="ml-2 text-xs">
+          <p className="text-white">Username</p>
+          <p className="text-[#ffffff80]">Member</p>
+        </div>
+      </div>
     </aside>
   );
 };

@@ -1,5 +1,4 @@
 import pool from "@/db";
-import { NextResponse } from "next/server";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
@@ -58,7 +57,7 @@ export async function POST(request) {
       },
     );
 
-    return NextResponse.json(
+    return Response.json(
       { status: "ok", msg: "Login Successful", data: {} },
       {
         status: 200,
