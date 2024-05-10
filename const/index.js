@@ -99,3 +99,24 @@ export const dashboardNavLinks = [
   { title: "Account", url: "", icon: "/icons/account.svg" },
   { title: "Logout", url: "", icon: "/icons/logout.svg" },
 ];
+
+export const bankInfo = [
+  { title: "Bank Name", value: "Access Bank" },
+  { title: "Account Number", value: "1120581370" },
+  { title: "Account Name", value: "Lawal Ibironke" },
+];
+
+export const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];

@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import TopupModal from "./TopupModal";
+import TopupModal from "./modal/TopupModal";
 import QuicksaveBtn from "./QuicksaveBtn";
 
 const WalletOverview = ({ userData }) => {

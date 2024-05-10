@@ -22,7 +22,9 @@ export async function POST(request) {
 
     //Get payload from request
     const requestData = await request.json();
-    const { amount, month } = requestData;
+    let { amount, month } = requestData;
+    amount = amount.replace(/[^\d.]+/g, "");
+    amount = parseFloat(amount);
 
     //Get payload from user profile in database
     const [sqlData] = await pool.query(
@@ -32,8 +34,16 @@ export async function POST(request) {
 
     //Insert transaction details
     const sql =
-      "INSERT INTO `transactions`(`transaction_type`, `transaction_date`, `member_id`, `transaction_amount`) VALUES (?,?,?,?)";
-    const values = ["Deposit", getCurrentDateTime(), sqlData[0].id, amount];
+      "INSERT INTO `transactions`(`transaction_type`, `transaction_date`, `member_id`, `transaction_amount`, `month_ref`, `payment_method`, `transaction_status`) VALUES (?,?,?,?,?,?,?)";
+    const values = [
+      "Deposit",
+      getCurrentDateTime(),
+      sqlData[0].id,
+      amount,
+      month,
+      "Bank Transfer",
+      "Pending",
+    ];
 
     const [result] = await pool.query(sql, values);
 
