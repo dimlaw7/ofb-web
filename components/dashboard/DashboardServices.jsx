@@ -25,7 +25,7 @@ const DashboardServices = () => {
             </button>
           </div>
         </div>
-        <div className="card mr-8 min-h-32 w-full rounded bg-lime-100 px-4 py-5 lg:w-60">
+        <div className="card mb-4 min-h-32 w-full rounded bg-lime-100 px-4 py-5 lg:mr-8 lg:w-60">
           <h4 className="text-sm font-semibold text-[#232834]">
             Save To Wallet
           </h4>

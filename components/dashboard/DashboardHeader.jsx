@@ -15,7 +15,7 @@ const DashboardHeader = ({ userData }) => {
           src="/icons/settings.svg"
           className="hidden lg:block"
           width={24}
-          height={24}
+          height={25}
           alt="settings"
         />
         <Image

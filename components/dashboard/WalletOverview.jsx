@@ -13,7 +13,7 @@ const WalletOverview = ({ userData }) => {
           make your payment today!
         </span>
       </div>
-      <section className="wallet my-8 flex w-full flex-col justify-between lg:flex-row">
+      <section className="wallet my-16 flex w-full flex-col justify-between lg:flex-row">
         <div className="cards flex">
           <div className="ballance h-44 w-full rounded bg-purp p-4 text-white lg:w-56">
             <h1 className="mb-4 opacity-80">FoodBasket Wallet</h1>

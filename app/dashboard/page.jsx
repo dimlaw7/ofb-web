@@ -17,7 +17,7 @@ const page = () => {
     return (
       <>
         <section className="navigation flex min-h-screen font-Poppins">
-          <SideNav />
+          <SideNav userData={decoded} />
           <div className="mx-8 flex-1">
             <DashboardHeader userData={decoded} />
             <WalletOverview userData={decoded} />

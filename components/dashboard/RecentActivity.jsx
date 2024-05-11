@@ -3,7 +3,7 @@ import ActivitySlip from "./ActivitySlip";
 
 const RecentActivity = () => {
   return (
-    <section className="activity my-8 flex flex-col lg:flex-row">
+    <section className="activity my-16 flex flex-col lg:flex-row">
       <div className="transactions">
         <h1 className="font-bold">Recent Activities</h1>
         <ActivitySlip type="credit" />
