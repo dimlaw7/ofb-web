@@ -5,7 +5,6 @@ import SideNav from "@/components/dashboard/SideNav";
 import WalletOverview from "@/components/dashboard/WalletOverview";
 import Services from "@/components/dashboard/DashboardServices";
 import RecentActivity from "@/components/dashboard/RecentActivity";
-import Footer from "@/components/Footer";
 
 const page = () => {
   const cookieStore = cookies();
@@ -16,16 +15,15 @@ const page = () => {
 
     return (
       <>
-        <section className="navigation flex min-h-screen font-Poppins">
+        <section className="navigation font-Poppins">
           <SideNav userData={decoded} />
-          <div className="mx-8 flex-1">
+          <div className="mx-8 lg:ml-72 lg:mr-8">
             <DashboardHeader userData={decoded} />
             <WalletOverview userData={decoded} />
             <Services />
             <RecentActivity />
           </div>
         </section>
-        <Footer />
       </>
     );
   } catch (error) {

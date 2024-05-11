@@ -18,7 +18,7 @@ const RecentActivity = async () => {
   return (
     <section className="activity my-16 flex flex-col lg:flex-row">
       <div className="transactions">
-        <h1 className="font-bold">Recent Activities</h1>
+        <h1 className="font-bold">Transaction Slips</h1>
         {data.map((value, index) => (
           <ActivitySlip
             key={index}

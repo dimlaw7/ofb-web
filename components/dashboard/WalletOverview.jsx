@@ -15,8 +15,8 @@ const WalletOverview = ({ userData }) => {
       </div>
       <section className="wallet my-16 flex w-full flex-col justify-between lg:flex-row">
         <div className="cards flex">
-          <div className="ballance h-44 w-full rounded bg-purp p-4 text-white lg:w-56">
-            <h1 className="mb-4 opacity-80">FoodBasket Wallet</h1>
+          <div className="ballance h-44 w-full rounded bg-[#280151] p-4 text-white lg:w-56">
+            <h1 className="mb-4 text-sm">Food Basket Wallet</h1>
             <h1 className="text-2xl font-extrabold">₦{userData.wallet}</h1>
             <div className="mt-8 lg:hidden">
               <QuicksaveBtn setShowModal={setShowModal} />
@@ -24,9 +24,9 @@ const WalletOverview = ({ userData }) => {
           </div>
           <div className="package relative hidden h-44 justify-between rounded bg-[#1565C0] p-4 text-white before:absolute before:left-0 before:top-0 before:h-full before:w-full before:bg-package-design lg:-ml-1 lg:flex lg:w-96">
             <div className="details">
-              <h1 className="text-xl font-medium">Package Type</h1>
-              <div className="mt-14 opacity-80">
-                <h2 className="font-bold">Tier 1</h2>
+              <h1 className="text-lg font-medium">Package Type</h1>
+              <div className="mt-14">
+                <h2 className="text-sm">Tier 1</h2>
                 <h3 className="mt-1">₦5000/month</h3>
               </div>
             </div>
