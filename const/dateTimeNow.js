@@ -1,5 +1,5 @@
-export default function getCurrentDateTime() {
-  const now = new Date();
+export default function getCurrentDateTime(data) {
+  var now = new Date();
 
   const year = now.getFullYear();
   const month = String(now.getMonth() + 1).padStart(2, "0");
@@ -10,4 +10,27 @@ export default function getCurrentDateTime() {
   const seconds = String(now.getSeconds()).padStart(2, "0");
 
   return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+}
+
+export function formatDate(isoDate) {
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  const date = new Date(isoDate);
+  const day = date.getDate();
+  const monthIndex = date.getMonth();
+  const year = date.getFullYear();
+
+  return `${months[monthIndex]} ${day} ${year}`;
 }

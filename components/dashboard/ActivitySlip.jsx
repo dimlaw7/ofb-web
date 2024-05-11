@@ -1,7 +1,9 @@
-const ActivitySlip = ({ type }) => {
-  if (type == "credit") {
+import { formatDate } from "@/const/dateTimeNow";
+
+const ActivitySlip = ({ type, date, amount, status }) => {
+  if (type == "Deposit") {
     return (
-      <div className="slip mt-8 flex w-full items-center justify-between rounded-3xl border border-[#cecece] p-2 lg:w-[546px]">
+      <div className="slip mt-8 flex w-full items-center justify-between rounded-xl border border-[#cecece] p-2 lg:w-[546px]">
         <div className="slip-det flex items-center text-sm">
           <svg
             width="51"
@@ -16,11 +18,18 @@ const ActivitySlip = ({ type }) => {
             />
           </svg>
           <div className="">
-            <h4 className="mb-1">Wallet Credited</h4>
-            <span className="text-zinc-600">Jan 27 2024, 12:30pm</span>
+            <h4 className="mb-1">{type}</h4>
+            <span
+              className={`text-xs ${status == "Pending" ? "text-amber-500" : ""}`}
+            >
+              {status}
+            </span>
           </div>
         </div>
-        <div className="amount text-[#086A00]">+ N10,000.00</div>
+        <div className="amount flex flex-col items-center text-sm text-[#086A00]">
+          <span>+₦{amount.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
+          <span className="text-xs text-zinc-600">{formatDate(date)}</span>
+        </div>
       </div>
     );
   }
