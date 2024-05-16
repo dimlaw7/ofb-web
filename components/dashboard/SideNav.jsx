@@ -1,6 +1,7 @@
 import HeaderLogo from "@/components/HeaderLogo";
 import Image from "next/image";
 import { dashboardNavLinks } from "@/const";
+import Link from "next/link";
 
 const SideNav = ({ userData }) => {
   return (
@@ -39,12 +40,12 @@ const SideNav = ({ userData }) => {
             key={index}
             className={`${index == 0 ? "bg-purp-60" : ""} px-9 py-4`}
           >
-            <a href="" className="flex text-white">
+            <Link href={item.url} className="flex text-white">
               <div>
                 <Image src={item.icon} width={24} height={25} alt="icon" />
               </div>
               <span className="ml-4 text-sm ">{item.title}</span>
-            </a>
+            </Link>
           </div>
         ))}
       </nav>
