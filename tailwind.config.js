@@ -22,6 +22,9 @@ module.exports = {
         light: "#E5E4E4",
         "purp-60": "rgba(234,225,243,0.6)",
         greyscale: "#718096",
+        "grey-bg": "#f4f5f6",
+        "grey-txt": "#00000080",
+        "purp-black": "#17002f",
       },
       fontFamily: {
         jost: ["Jost", "sans-serif"],
