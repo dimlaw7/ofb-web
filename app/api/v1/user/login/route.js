@@ -48,8 +48,8 @@ export async function POST(request) {
       {
         username: sqlData.user,
         firstName: sqlData.firstName,
-        lastName: sqlData.LastName,
-        wallet: sqlData.Wallet,
+        lastName: sqlData.lastName,
+        wallet: sqlData.wallet,
       },
       process.env.JWT_SECRET,
       {
