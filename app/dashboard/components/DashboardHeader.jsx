@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const DashboardHeader = ({ userData }) => {
   return (
-    <header className="flex justify-between self-start border-b border-purp-60 py-4">
+    <header className="flex justify-between self-start border-b border-purp-60 bg-white px-4 py-4">
       <div>
         <h6 className="font-sora text-xl font-bold text-purple-950">
           {userData.username}
@@ -10,7 +10,7 @@ const DashboardHeader = ({ userData }) => {
         <p className=" text-sm text-[#00000080]">Welcome to your profile</p>
       </div>
       <div className="flex items-center gap-4">
-        <span className="wallet font-semibold text-sec">
+        <span className="wallet hidden font-semibold text-sec lg:inline">
           ₦{userData.wallet}
         </span>
         <Image

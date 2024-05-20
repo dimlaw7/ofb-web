@@ -1,4 +1,3 @@
-import { cookies } from "next/headers";
 import pool from "@/db";
 import Image from "next/image";
 import ActivitySlip from "./ActivitySlip";
@@ -12,7 +11,7 @@ const RecentActivity = async ({ userData }) => {
 
   const data = JSON.parse(JSON.stringify(sqlData));
   return (
-    <section className="activity my-16 flex flex-col lg:flex-row">
+    <section className="activity mx-4 my-16 flex flex-col bg-white px-4 py-8 lg:flex-row">
       <div className="transactions">
         <h1 className="font-bold">Transaction Slips</h1>
         {data.map((value, index) => (

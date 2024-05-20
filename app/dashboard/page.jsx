@@ -1,11 +1,11 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import jwt from "jsonwebtoken";
-import DashboardHeader from "@/components/dashboard/DashboardHeader";
-import SideNav from "@/components/dashboard/SideNav";
-import WalletOverview from "@/components/dashboard/WalletOverview";
-import Services from "@/components/dashboard/DashboardServices";
-import RecentActivity from "@/components/dashboard/RecentActivity";
+import DashboardHeader from "./components/DashboardHeader";
+import SideNav from "@/app/dashboard/components/SideNav";
+import WalletOverview from "./components/WalletOverview";
+import Services from "@/app/dashboard/components/DashboardServices";
+import RecentActivity from "@/app/dashboard/components/RecentActivity";
 
 const page = () => {
   const cookieStore = cookies();
@@ -18,7 +18,7 @@ const page = () => {
       <>
         <section className="navigation bg-grey-bg font-Poppins">
           <SideNav userData={decoded} />
-          <div className="mx-8 lg:ml-72 lg:mr-8">
+          <div className="lg:ml-64">
             <DashboardHeader userData={decoded} />
             <WalletOverview userData={decoded} />
             <Services />

@@ -1,24 +1,24 @@
 "use client";
 import { useState } from "react";
-import TopupModal from "./modal/TopupModal";
-import QuicksaveBtn from "./QuicksaveBtn";
+import TopupModal from "../../../components/dashboard/modal/TopupModal";
+import QuicksaveBtn from "../../../components/dashboard/QuicksaveBtn";
 
 const WalletOverview = ({ userData }) => {
   const [showModal, setShowModal] = useState(false);
   return (
     <>
-      <div className="news mt-8 rounded bg-red-600 p-2 text-sm font-light text-white">
-        <span>
+      <div className="news mx-4 mt-8 overflow-hidden rounded bg-red-600 p-2 text-sm font-light text-white">
+        <span className="text whitespace-nowrap text-nowrap">
           Your N5000 monthly wallet contribution is due for May. Remember to
           make your payment today!
         </span>
       </div>
-      <section className="wallet my-16 flex w-full flex-col justify-between lg:flex-row">
+      <section className="wallet my-12 flex w-full flex-col justify-between px-4 lg:flex-row">
         <div className="cards flex">
-          <div className="ballance h-44 w-full rounded bg-[#280151] p-4 text-white lg:w-56">
+          <div className=" ballance relative h-44 w-full rounded bg-[#280151] p-4 text-white before:absolute before:left-0 before:top-0 before:h-full before:w-full before:bg-package-design lg:w-56">
             <h1 className="mb-4 text-sm">Food Basket Wallet</h1>
             <h1 className="text-2xl font-extrabold">₦{userData.wallet}</h1>
-            <div className="mt-8 lg:hidden">
+            <div className="relative mt-8 lg:hidden">
               <QuicksaveBtn setShowModal={setShowModal} />
             </div>
           </div>

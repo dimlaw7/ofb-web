@@ -1,7 +1,7 @@
 const DashboardServices = () => {
   return (
-    <section>
-      <h4>What will you like to do?</h4>
+    <section className="mx-4 bg-white px-4 py-8">
+      <h4 className="font-semibold">What will you like to do?</h4>
       <div className="mt-8 flex flex-col lg:flex-row">
         <div className="card mb-4 min-h-32 w-full rounded bg-purple-200 px-4 py-5 lg:mr-8 lg:w-60">
           <h4 className="text-sm font-semibold text-[#232834]">
