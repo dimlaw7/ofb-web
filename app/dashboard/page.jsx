@@ -16,7 +16,7 @@ const page = () => {
 
     return (
       <>
-        <section className="navigation font-Poppins">
+        <section className="navigation bg-grey-bg font-Poppins">
           <SideNav userData={decoded} />
           <div className="mx-8 lg:ml-72 lg:mr-8">
             <DashboardHeader userData={decoded} />

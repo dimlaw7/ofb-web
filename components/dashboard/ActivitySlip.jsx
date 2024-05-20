@@ -3,7 +3,7 @@ import { formatDate } from "@/const/dateTimeNow";
 const ActivitySlip = ({ type, date, amount, status }) => {
   if (type == "Deposit") {
     return (
-      <div className="slip mt-4 flex w-full items-center justify-between rounded-xl border border-[#cecece] p-2 lg:w-[546px]">
+      <div className="slip mt-4 flex w-full items-center justify-between rounded-xl border border-[#cecece] bg-white p-2 lg:w-[546px]">
         <div className="slip-det flex items-center text-sm">
           <svg
             width="51"
