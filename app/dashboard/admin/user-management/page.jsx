@@ -1,5 +1,6 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import pool from "@/db";
 import jwt from "jsonwebtoken";
 import DashboardHeader from "@/components/dashboard/DashboardHeader";
 import SideNav from "@/components/dashboard/SideNav";
@@ -13,16 +14,18 @@ const page = async () => {
 
   try {
     const decoded = jwt.verify(token.value, process.env.JWT_SECRET);
-    const response = await fetch(process.env.URL + "/api/v1/admin/user-mgt", {
-      method: "POST",
-      credentials: "same-origin",
-      headers: {
-        Cookie: `token=${token.value};`,
-      },
-      body: JSON.stringify({ action: null }),
-    });
-    const apiData = await response.json();
-    const { data } = apiData;
+    const { username } = decoded;
+    const [roleData] = await pool.query(
+      "SELECT role FROM profiles WHERE user = ?",
+      [username],
+    );
+    if (roleData[0].role < 1) throw new Error("Unauthorized action");
+
+    const [sqlData] = await pool.query(
+      "SELECT id, user, CONCAT(firstName, ' ', lastName) AS fullName, email, role FROM profiles ORDER BY role DESC",
+    );
+
+    const plainData = JSON.parse(JSON.stringify(sqlData));
 
     return (
       <>
@@ -34,7 +37,7 @@ const page = async () => {
               <PageDetails />
               <table className="w-full border-separate rounded-md border bg-white">
                 <TableHead />
-                <TableBody data={data} />
+                <TableBody data={plainData} />
               </table>
             </section>
           </div>
@@ -42,6 +45,7 @@ const page = async () => {
       </>
     );
   } catch (error) {
+    console.log(error.message);
     redirect(`/login`);
   }
 };
