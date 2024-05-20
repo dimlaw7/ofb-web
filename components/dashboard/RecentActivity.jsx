@@ -1,20 +1,16 @@
 import { cookies } from "next/headers";
+import pool from "@/db";
 import Image from "next/image";
 import ActivitySlip from "./ActivitySlip";
 
-const RecentActivity = async () => {
-  const cookieStore = cookies();
-  const token = cookieStore.get("token");
+const RecentActivity = async ({ userData }) => {
+  const { username } = userData;
+  const [sqlData] = await pool.query(
+    "SELECT t.transaction_type, t.transaction_date, t.transaction_amount, t.transaction_status FROM profiles p INNER JOIN transactions t ON p.id=t.member_id WHERE p.user = ? ORDER BY t.transaction_date DESC",
+    [username],
+  );
 
-  const response = await fetch(process.env.URL + "/api/v1/user/transactions", {
-    method: "POST",
-    credentials: "same-origin",
-    headers: {
-      Cookie: `token=${token.value};`,
-    },
-  });
-  const apiData = await response.json();
-  const { data } = apiData;
+  const data = JSON.parse(JSON.stringify(sqlData));
   return (
     <section className="activity my-16 flex flex-col lg:flex-row">
       <div className="transactions">

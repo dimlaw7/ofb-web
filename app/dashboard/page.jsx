@@ -22,7 +22,7 @@ const page = () => {
             <DashboardHeader userData={decoded} />
             <WalletOverview userData={decoded} />
             <Services />
-            <RecentActivity />
+            <RecentActivity userData={decoded} />
           </div>
         </section>
       </>
