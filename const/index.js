@@ -7,22 +7,28 @@ export const navLinks = [
 
 export const services = [
   {
-    title: "Savings Plan",
-    desc: "Watch your savings grow steadily throughout the year, ensuring you have a budget set aside for the festive season.",
+    title: "#1 trusted Save-to-feast app",
+    desc: "Trusted and used by hundreds of public workers, enterpreneurs and artisans to give value to  their savings in the food market",
     icon: "icons/mobile-wallet.svg",
     aos: "fade-right",
   },
   {
-    title: "Quality Assurance",
-    desc: "Reap the rewards of your diligent saving efforts with our year-end feast extravaganza!",
-    icon: "icons/quality-assurance.svg",
-    aos: "flip-down",
+    title: "Convenient savings plan",
+    desc: "Savings plan that's convenient for all levels of stratification without compromising your feast value",
+    icon: "icons/mobile-wallet.svg",
+    aos: "fade-right",
   },
   {
-    title: "Abundant Feast",
+    title: "Abundant feast",
     desc: "Reap the rewards of your diligent saving efforts with our year-end feast extravaganza!",
     icon: "icons/abundant.svg",
     aos: "fade-left",
+  },
+  {
+    title: "Safe and Secure profile wallet",
+    desc: "Internet Security and encryption to ensure that your information is comepletely protected from fraud.",
+    icon: "icons/quality-assurance.svg",
+    aos: "flip-down",
   },
 ];
 

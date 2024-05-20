@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import Image from "next/image";
 import { navLinks } from "@/const";
 import Link from "next/link";
 import HeaderLogo from "./HeaderLogo";
