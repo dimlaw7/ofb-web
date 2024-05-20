@@ -19,16 +19,23 @@ const Services = () => {
           <h5 className="font-extrabold text-sec lg:text-xl">Services</h5>
           <h4 className="text-2xl font-extrabold lg:text-3xl">What We Offer</h4>
         </div>
-        <div className="wrap-cards flex w-full flex-col sm:flex-row">
+        <div className="wrap-cards flex w-full flex-col gap-8 sm:flex-row lg:gap-0">
           {services.map((item, index) => (
             <div
               // data-aos={item.aos}
-              className={`card flex max-w-full shrink-0 flex-col items-center gap-4 px-4 py-2 sm:w-1/4 lg:gap-4`}
+              className={`card flex max-w-full shrink-0 items-start gap-4 px-4 py-2 sm:w-1/4 lg:flex-col lg:items-center lg:gap-4`}
               key={index}
             >
-              <Image src={item.icon} width={100} height={100} />
-              <h6 className="text-center font-bold">{item.title}</h6>
-              <p className="text-center text-sm font-light">{item.desc}</p>
+              <Image
+                src={item.icon}
+                width={200}
+                height={200}
+                className="w-20 lg:w-auto"
+              />
+              <div className="lg:text-center">
+                <h6 className="mb-4 font-bold text-purp-black">{item.title}</h6>
+                <p className="text-sm font-light">{item.desc}</p>
+              </div>
             </div>
           ))}
         </div>

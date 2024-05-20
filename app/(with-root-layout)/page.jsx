@@ -1,5 +1,6 @@
 import Banner from "@/components/Banner";
 import Hero from "@/components/Hero";
+import Impact from "@/components/Impact";
 import Services from "@/components/Services";
 import Why from "@/components/Why";
 
@@ -9,6 +10,7 @@ export default function Home() {
       <Hero />
       <Services />
       <Why />
+      <Impact />
       <Banner />
     </>
   );

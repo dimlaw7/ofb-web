@@ -35,19 +35,19 @@ export const services = [
 export const why = [
   {
     title: "Convenient Shopping",
-    desc: "With our platform, you can conveniently shop for all your household needs from the comfort of your home.",
+    desc: "Conveniently shop for all your household needs from the comfort of your home.",
     icon: "icons/mobile-wallet.svg",
     aos: "fade-right",
   },
   {
     title: "Year-End Feast",
-    desc: "Enjoy a bountiful spread of delicious food items, beverages, and household essentials, all sourced at discounted rates exclusively for our members.",
+    desc: "Bountiful spread of delicious food items, beverages, and household essentials, at discounted rates.",
     icon: "icons/quality-assurance.svg",
     aos: "flip-down",
   },
   {
     title: "Community Support",
-    desc: "Join a vibrant community of like-minded individuals committed to promoting a culture of saving and sharing.",
+    desc: "Vibrant community of like-minded individuals committed to promoting a culture of saving and sharing.",
     icon: "icons/abundant.svg",
     aos: "fade-left",
   },
