@@ -2,9 +2,9 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import pool from "@/db";
 import jwt from "jsonwebtoken";
-import DashboardHeader from "@/app/dashboard/components/DashboardHeader";
-import SideNav from "@/app/dashboard/components/SideNav";
-import PageDetails from "./components/PageDetails";
+import DashboardHeader from "@/components/dashboard/DashboardHeader";
+import SideNav from "@/components/dashboard/SideNav";
+import PageDetails from "@/components/dashboard/PageDetails";
 import TableHead from "./components/TableHead";
 import TableBody from "./components/TableBody";
 
@@ -31,14 +31,31 @@ const page = async () => {
       <>
         <section className="navigation bg-grey-bg font-Poppins">
           <SideNav userData={decoded} />
-          <div className="mx-8 lg:ml-72 lg:mr-8">
+          <div className="lg:ml-64">
             <DashboardHeader userData={decoded} />
             <section>
-              <PageDetails />
-              <table className="w-full border-separate rounded-md border bg-white">
-                <TableHead />
-                <TableBody data={plainData} />
-              </table>
+              <PageDetails title="User Management">
+                <div className="mt-4 flex lg:mt-0">
+                  <div>
+                    <input
+                      type="text"
+                      name=""
+                      id=""
+                      placeholder="Search User"
+                      className="mb-0 h-full w-60 rounded-md border border-purp-60"
+                    />
+                  </div>
+                  <button className="rank-user ml-4 rounded-md bg-yellow-400 p-2 text-sm font-medium text-purp-black lg:min-w-32">
+                    Rank User
+                  </button>
+                </div>
+              </PageDetails>
+              <div className="px-4">
+                <table className="w-full border-separate rounded-md border bg-white">
+                  <TableHead />
+                  <TableBody data={plainData} />
+                </table>
+              </div>
             </section>
           </div>
         </section>

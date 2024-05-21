@@ -105,7 +105,7 @@ export const dashboardNavLinks = [
   { title: "Account", url: "", icon: "/icons/account.svg" },
   {
     title: "Admin Panel",
-    url: "/dashboard/admin/user-management",
+    url: "/dashboard/admin/",
     icon: "/icons/logout.svg",
   },
   { title: "Logout", url: "", icon: "/icons/logout.svg" },

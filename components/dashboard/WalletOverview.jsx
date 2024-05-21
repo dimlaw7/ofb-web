@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import TopupModal from "../../../components/dashboard/modal/TopupModal";
-import QuicksaveBtn from "../../../components/dashboard/QuicksaveBtn";
+import TopupModal from "./modal/TopupModal";
+import QuicksaveBtn from "./QuicksaveBtn";
 
 const WalletOverview = ({ userData }) => {
   const [showModal, setShowModal] = useState(false);

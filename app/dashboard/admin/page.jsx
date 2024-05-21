@@ -1,11 +1,9 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import jwt from "jsonwebtoken";
-import DashboardHeader from "../../components/dashboard/DashboardHeader";
+import DashboardHeader from "@/components/dashboard/DashboardHeader";
 import SideNav from "@/components/dashboard/SideNav";
-import WalletOverview from "../../components/dashboard/WalletOverview";
-import Services from "@/components/dashboard/DashboardServices";
-import RecentActivity from "@/components/dashboard/RecentActivity";
+import Link from "next/link";
 
 const page = () => {
   const cookieStore = cookies();
@@ -20,9 +18,10 @@ const page = () => {
           <SideNav userData={decoded} />
           <div className="lg:ml-64">
             <DashboardHeader userData={decoded} />
-            <WalletOverview userData={decoded} />
-            <Services />
-            <RecentActivity userData={decoded} />
+            <div>
+              <Link href="admin/user-management">User Management</Link>
+              <Link href="admin/transactions">Transactions</Link>
+            </div>
           </div>
         </section>
       </>
