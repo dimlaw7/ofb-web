@@ -6,6 +6,7 @@ import SideNav from "@/components/dashboard/SideNav";
 import DashboardHeader from "@/components/dashboard/DashboardHeader";
 import PageDetails from "@/components/dashboard/PageDetails";
 import { formatDate } from "@/const/dateTimeNow";
+import Link from "next/link";
 
 const page = async () => {
   const cookieStore = cookies();
@@ -22,7 +23,7 @@ const page = async () => {
     if (roleData[0].role < 1) throw new Error("Unauthorized action");
 
     const [sqlData] = await pool.query(
-      "SELECT t.transaction_date date, t.transaction_status status, t.transaction_type type, t.transaction_amount amount, t.transaction_id id, t.payment_method method, p.firstName FROM transactions t INNER JOIN profiles p ON t.member_id = p.id ORDER BY id DESC",
+      "SELECT t.transaction_id id, t.transaction_date date, t.transaction_status status, t.transaction_type type, t.transaction_amount amount, t.transaction_id id, t.payment_method method, p.firstName FROM transactions t INNER JOIN profiles p ON t.member_id = p.id ORDER BY id DESC",
     );
 
     //const plainData = JSON.parse(JSON.stringify(sqlData));
@@ -59,10 +60,18 @@ const page = async () => {
                   </tr>
                   {sqlData.map((item, index) => (
                     <tr className="text-sm" key={index}>
-                      <td className="user-role border-b p-2">
-                        {formatDate(item.date)}
+                      <td className="user-role border-b p-2 text-xs">
+                        {formatDate(item.date).datestamp}
                       </td>
-                      <td className="user-role border-b p-2">{item.status}</td>
+                      <td className="user-role border-b p-2">
+                        <Link href={"transactions/" + item.id}>
+                          <span
+                            className={`inline-block rounded-md bg-yellow-100 p-2 text-sm text-yellow-500`}
+                          >
+                            {item.status}
+                          </span>
+                        </Link>
+                      </td>
                       <td className="user-role border-b p-2">{item.type}</td>
                       <td className="user-role border-b p-2">{item.amount}</td>
                       <td className="user-role border-b p-2">

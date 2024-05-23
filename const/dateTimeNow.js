@@ -31,6 +31,12 @@ export function formatDate(isoDate) {
   const day = date.getDate();
   const monthIndex = date.getMonth();
   const year = date.getFullYear();
-
-  return `${months[monthIndex]} ${day} ${year}`;
+  const hour = date.getHours();
+  const min = date.getMinutes();
+  const sec = date.getSeconds();
+  //return `${months[monthIndex]} ${day} ${year}`;
+  return {
+    datestamp: `${months[monthIndex]} ${day} ${year}`,
+    timestamp: `${months[monthIndex]} ${day} ${year} ${hour}:${min}:${sec}`,
+  };
 }

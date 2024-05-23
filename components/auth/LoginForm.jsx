@@ -42,7 +42,6 @@ const LoginForm = () => {
     });
     const apiData = await response.json();
 
-    setLoader((current) => !current); //Hide Loader After Response
     apiData.status === "error"
       ? Swal.fire({
           icon: "error",
@@ -51,17 +50,8 @@ const LoginForm = () => {
           text: apiData.msg,
           confirmButtonColor: "#DC3545",
         })
-      : Swal.fire({
-          icon: "success",
-          iconColor: "",
-          title: "Login Successful",
-          text: apiData.msg,
-          confirmButtonColor: "#6420AA",
-        }).then((result) => {
-          if (result.isConfirmed) {
-            router.push("/dashboard");
-          }
-        });
+      : router.push("/dashboard");
+    setLoader((current) => !current); //Hide Loader After Response
   };
 
   return (

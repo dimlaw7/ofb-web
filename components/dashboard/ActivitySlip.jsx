@@ -28,7 +28,9 @@ const ActivitySlip = ({ type, date, amount, status }) => {
         </div>
         <div className="amount flex flex-col items-center text-sm text-[#086A00]">
           <span>+₦{amount.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
-          <span className="text-xs text-zinc-600">{formatDate(date)}</span>
+          <span className="text-xs text-zinc-600">
+            {formatDate(date).datestamp}
+          </span>
         </div>
       </div>
     );
