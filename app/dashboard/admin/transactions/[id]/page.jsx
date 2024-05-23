@@ -12,16 +12,19 @@ import Link from "next/link";
 const page = async ({ params }) => {
   const cookieStore = cookies();
   const token = cookieStore.get("token");
+
+  let connection;
   try {
     const decoded = jwt.verify(token.value, process.env.JWT_SECRET);
     const { username } = decoded;
-    const [roleData] = await pool.query(
+    connection = await pool.getConnection();
+    const [roleData] = await connection.query(
       "SELECT role FROM profiles WHERE user = ?",
       [username],
     );
     if (roleData[0].role < 1) throw new Error("Unauthorized action");
 
-    const [sqlData] = await pool.query(
+    const [sqlData] = await connection.query(
       "SELECT t.transaction_id id, t.transaction_date date, t.transaction_status status, t.transaction_type type, t.transaction_amount amount, t.payment_method method, CONCAT(p.firstName, ' ', p.lastName) AS fullName FROM transactions t INNER JOIN profiles p ON t.member_id = p.id WHERE t.transaction_id = ? ORDER BY id DESC LIMIT 1",
       [params.id],
     );
@@ -97,6 +100,8 @@ const page = async ({ params }) => {
   } catch (err) {
     console.log(err.message);
     redirect(`/login`);
+  } finally {
+    if (connection) connection.release();
   }
 };
 

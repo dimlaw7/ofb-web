@@ -24,8 +24,10 @@ export async function POST(request) {
   }
 
   //If no error, Save JWT and Insert Data to DB
+  let connection;
   try {
-    const [results, fields] = await pool.query(
+    connection = await pool.getConnection();
+    const [results, fields] = await connection.query(
       "SELECT * FROM `profiles` WHERE email = ?",
       [email],
     );
@@ -68,5 +70,7 @@ export async function POST(request) {
     );
   } catch (err) {
     return Response.json({ status: "error", msg: err.message });
+  } finally {
+    if (connection) connection.release();
   }
 }
