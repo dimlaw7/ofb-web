@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const SideNav = ({ userData }) => {
   return (
-    <aside className="nav fixed bottom-0 top-0 hidden w-64 bg-[#17002f] pt-4 lg:block">
+    <aside className="nav fixed bottom-0 top-0 z-10 w-64 bg-[#17002f] pt-4 lg:block">
       <div className="logo-hamburger-search mx-6">
         <div className="logo-hamburger flex items-center justify-between">
           <HeaderLogo css="text-white" />

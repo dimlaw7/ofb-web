@@ -1,4 +1,5 @@
-import Image from "next/image";
+import Bell from "@/public/icons/notif_bell.svg";
+import Hamburger from "@/public/icons/hamburger-2.svg";
 
 const DashboardHeader = ({ userData }) => {
   return (
@@ -13,20 +14,11 @@ const DashboardHeader = ({ userData }) => {
         <span className="wallet hidden font-semibold text-sec lg:inline">
           ₦{userData.wallet}
         </span>
-        <Image
-          src="/icons/settings.svg"
-          className="hidden lg:block"
-          width={24}
-          height={25}
-          alt="settings"
-        />
-        <Image
-          src="/icons/notif_bell.svg"
-          width={24}
-          height={24}
-          alt="notification"
-          style={{ width: "24px", height: "24px" }}
-        />
+        <Bell className="h-6 w-6" />
+        <div className="flex h-6 w-6 justify-center rounded-full bg-blue-100 text-xs leading-6">
+          OL
+        </div>
+        <Hamburger />
       </div>
     </header>
   );
