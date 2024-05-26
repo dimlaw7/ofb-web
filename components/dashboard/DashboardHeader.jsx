@@ -18,7 +18,9 @@ const DashboardHeader = ({ userData }) => {
         <div className="flex h-6 w-6 justify-center rounded-full bg-blue-100 text-xs leading-6">
           OL
         </div>
-        <Hamburger />
+        <div className="invinsible lg:visible">
+          <Hamburger />
+        </div>
       </div>
     </header>
   );
