@@ -7,7 +7,6 @@ import SideNav from "@/components/dashboard/SideNav";
 import PageDetails from "@/components/dashboard/PageDetails";
 import TableHead from "./components/TableHead";
 import TableBody from "./components/TableBody";
-import { isAdmin } from "@/const/functions";
 
 const page = async () => {
   const cookieStore = cookies();

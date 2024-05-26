@@ -15,8 +15,6 @@ const RecentActivity = async ({ userData }) => {
     );
     const data = JSON.parse(JSON.stringify(sqlData));
 
-    console.log(sqlData.length);
-
     if (sqlData.length > 0) {
       return (
         <section className="activity mx-4 my-16 flex flex-col bg-white px-4 py-8 lg:flex-row">
