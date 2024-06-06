@@ -68,7 +68,7 @@ const page = async () => {
                       <td className="user-role border-b p-2">
                         <Link href={"transactions/" + item.id}>
                           <span
-                            className={`inline-block rounded-md bg-yellow-100 p-2 text-sm text-yellow-500`}
+                            className={`inline-block rounded-md ${item.status == "Pending" ? "bg-yellow-100 text-yellow-500" : item.status == "Disprove" ? "bg-red-100 text-red-500" : "bg-green-100 text-green-500"}  p-2 text-sm `}
                           >
                             {item.status}
                           </span>

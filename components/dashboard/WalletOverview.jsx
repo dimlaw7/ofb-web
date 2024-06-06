@@ -5,6 +5,13 @@ import QuicksaveBtn from "./QuicksaveBtn";
 
 const WalletOverview = ({ userData }) => {
   const [showModal, setShowModal] = useState(false);
+
+  // Split the input value into integer and decimal parts
+  let [integerPart, decimalPart] = userData.wallet.split(".");
+  // Format the integer part with commas for thousands separators
+  integerPart = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  const wallet = `${integerPart}.${decimalPart}`;
+
   return (
     <>
       <div className="news mx-4 mt-8 overflow-hidden rounded bg-red-600 p-2 text-sm font-light text-white">
@@ -17,7 +24,7 @@ const WalletOverview = ({ userData }) => {
         <div className="cards flex">
           <div className=" ballance relative h-44 w-full rounded bg-[#280151] p-4 text-white before:absolute before:left-0 before:top-0 before:h-full before:w-full before:bg-package-design lg:w-56">
             <h1 className="mb-4 text-sm">Food Basket Wallet</h1>
-            <h1 className="text-2xl font-extrabold">₦{userData.wallet}</h1>
+            <h1 className="text-2xl font-extrabold">₦{wallet}</h1>
             <div className="relative mt-8 lg:hidden">
               <QuicksaveBtn setShowModal={setShowModal} />
             </div>

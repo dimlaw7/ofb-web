@@ -26,7 +26,9 @@ const page = async ({ params, searchParams }) => {
       "SELECT role FROM profiles WHERE user = ?",
       [username],
     );
-    if (roleData[0].role < 1) throw new Error("Unauthorized action");
+    if (roleData.length === 0 || roleData[0].role < 1) {
+      throw new Error("Unauthorized action");
+    }
 
     const [sqlData] = await connection.query(
       "SELECT t.transaction_id id, t.transaction_date date, t.transaction_status status, t.transaction_type type, t.transaction_amount amount, t.payment_method method, CONCAT(p.firstName, ' ', p.lastName) AS fullName, p.user FROM transactions t INNER JOIN profiles p ON t.member_id = p.id WHERE t.transaction_id = ? ORDER BY id DESC LIMIT 1",
@@ -34,6 +36,7 @@ const page = async ({ params, searchParams }) => {
     );
     const [data] = sqlData;
 
+    //Handle approval actions and redirect
     if (data.status == "Pending") {
       if (!isEmpty(searchParams)) {
         if (searchParams.action == "approve") {
@@ -45,6 +48,7 @@ const page = async ({ params, searchParams }) => {
             "UPDATE profiles SET wallet = wallet + ? WHERE user = ?",
             [data.amount, data.user],
           );
+          throw new Error("Data Updated");
         } else {
         }
       }
@@ -65,18 +69,22 @@ const page = async ({ params, searchParams }) => {
                   </Link>
                   <h1 className="">Transaction Details</h1>
                 </div>
-                <div className="action-btn flex justify-center gap-4 max-sm:mt-8">
-                  <Link href="?action=approve">
-                    <button className="h-8 w-28 rounded-md bg-purp text-xs font-light text-white">
-                      Approve
-                    </button>
-                  </Link>
-                  <Link href="?action=disprove">
-                    <button className="h-8 w-28 rounded-md border border-[#fe6161] bg-[#FFEEF1] p-0 text-xs font-light text-[#fe6161]">
-                      Decline
-                    </button>
-                  </Link>
-                </div>
+                {data.status != "Pending" ? (
+                  ""
+                ) : (
+                  <div className="action-btn flex justify-center gap-4 max-sm:mt-8">
+                    <Link href="?action=approve">
+                      <button className="h-8 w-28 rounded-md bg-purp text-xs font-light text-white">
+                        Approve
+                      </button>
+                    </Link>
+                    <Link href="?action=disprove">
+                      <button className="h-8 w-28 rounded-md border border-[#fe6161] bg-[#FFEEF1] p-0 text-xs font-light text-[#fe6161]">
+                        Decline
+                      </button>
+                    </Link>
+                  </div>
+                )}
               </div>
               <div className="amount mt-8 w-52 rounded-md border border-yellow-400 bg-yellow-50 p-4">
                 <h6 className="text-sm font-medium">Approval requied for</h6>
@@ -123,6 +131,9 @@ const page = async ({ params, searchParams }) => {
     );
   } catch (err) {
     console.log(err.message);
+    if (err.message == "Data Updated") {
+      redirect("/dashboard/admin/transactions");
+    }
     redirect(`/login`);
   } finally {
     if (connection) connection.release();
