@@ -50,9 +50,13 @@ export async function POST(request) {
 
   //If no error, Save JWT and Insert Data to DB
   try {
-    const token = jwt.sign({ username: uname }, process.env.JWT_SECRET, {
-      expiresIn: "1h",
-    });
+    const token = jwt.sign(
+      { username: uname, wallet: 0.0 },
+      process.env.JWT_SECRET,
+      {
+        expiresIn: "1h",
+      },
+    );
 
     const hashedPassword = await bcrypt.hash(pass, 10);
     const [results, fields] = await pool.query(

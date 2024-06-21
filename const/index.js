@@ -102,7 +102,7 @@ export const dashboardNavLinks = [
   },
   { title: "Wallet", url: "", icon: "/icons/wallet.svg" },
   { title: "Loan", url: "", icon: "/icons/loan.svg" },
-  { title: "Account", url: "", icon: "/icons/account.svg" },
+  { title: "Account", url: "/dashboard/settings", icon: "/icons/account.svg" },
   {
     title: "Admin Panel",
     url: "/dashboard/admin/",

@@ -5,9 +5,8 @@ import QuicksaveBtn from "./QuicksaveBtn";
 
 const WalletOverview = ({ userData }) => {
   const [showModal, setShowModal] = useState(false);
-
   // Split the input value into integer and decimal parts
-  let [integerPart, decimalPart] = userData.wallet.split(".");
+  let [integerPart, decimalPart] = userData.wallet.toFixed(2).split(".");
   // Format the integer part with commas for thousands separators
   integerPart = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   const wallet = `${integerPart}.${decimalPart}`;

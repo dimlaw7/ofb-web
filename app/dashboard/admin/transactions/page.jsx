@@ -33,7 +33,7 @@ const page = async () => {
     return (
       <section className="navigation bg-grey-bg font-Poppins">
         <SideNav userData={decoded} />
-        <div className="lg:ml-64">
+        <div className="pb-16 lg:ml-64">
           <DashboardHeader userData={decoded} />
           <section>
             <PageDetails title="Transactions" />

@@ -18,7 +18,14 @@ const SideNav = ({ userData }) => {
             <HeaderLogo css="text-white" />
           </div>
           <div className="dp-profile my-8 flex items-center border-b border-t border-b-purp-60 border-t-purp-60 p-2">
-            <div className="h-7 w-7 rounded-full bg-purp-60"></div>
+            <div className="h-7 w-7 rounded-full">
+              <Image
+                src="/icons/profile_account.svg"
+                width={28}
+                height={28}
+                alt="My DP"
+              />
+            </div>
             <div className="ml-2 text-xs">
               <p className="text-white">{userData.username}</p>
               <p className="text-[#ffffff80]">Member</p>
