@@ -52,12 +52,10 @@ const SideNav = ({ userData }) => {
           {dashboardNavLinks.map((item, index) => (
             <div
               key={index}
-              className={`${index == 0 ? "bg-purp-60" : ""} px-9 py-4`}
+              className={`${index == 0 ? "bg-purp-60" : ""} px-9 py-4 text-white hover:bg-purp-60`}
             >
-              <Link href={item.url} className="flex text-white">
-                <div>
-                  <Image src={item.icon} width={24} height={25} alt="icon" />
-                </div>
+              <Link href={item.url} className="flex">
+                <Image src={item.icon} width={24} height={25} alt="icon" />
                 <span className="ml-4 text-sm ">{item.title}</span>
               </Link>
             </div>
@@ -65,7 +63,7 @@ const SideNav = ({ userData }) => {
         </nav>
       </aside>
       <div
-        className="absolute right-4 top-[30px] lg:invisible"
+        className="absolute right-4 top-[30px] cursor-pointer hover:bg-purp-60 lg:invisible"
         onClick={() => setShowSideNav(!showSideNav)}
       >
         <Hamburger />

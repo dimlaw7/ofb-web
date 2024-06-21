@@ -3,8 +3,8 @@ import Image from "next/image";
 const Footer = () => {
   return (
     <footer className="bg-purple-200 px-8 py-16 lg:px-0">
-      <div className=" container mx-auto flex flex-col justify-between lg:flex-row">
-        <div className="company max-sm:mb-16 lg:w-5/12">
+      <div className=" container mx-auto flex flex-col justify-between lg:flex-row lg:justify-normal">
+        <div className="company max-sm:mb-16 lg:w-4/12">
           <div className="mb-4 flex items-center">
             <Image
               src="/images/food-basket.png"
@@ -20,7 +20,7 @@ const Footer = () => {
             quality and quantity during the festive season
           </p>
         </div>
-        <div className="grid grid-cols-2 gap-8 lg:w-6/12 lg:grid-cols-3">
+        <div className="grid grid-cols-2 gap-8 lg:ml-8 lg:w-5/12 lg:grid-cols-3">
           <div className="foot-col text-sm">
             <h6>Company</h6>
             <a href="http://">About Us</a>

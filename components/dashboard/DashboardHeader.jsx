@@ -14,11 +14,11 @@ const DashboardHeader = ({ userData }) => {
         <span className="wallet hidden font-semibold text-sec lg:inline">
           ₦{userData.wallet}
         </span>
-        <Bell className="h-6 w-6" />
-        <div className="flex h-6 w-6 justify-center rounded-full bg-blue-100 text-xs leading-6">
+        <Bell className="h-6 w-6 cursor-pointer" />
+        <div className="flex h-6 w-6 cursor-pointer justify-center rounded-full bg-blue-100 text-xs leading-6">
           OL
         </div>
-        <div className="invinsible lg:visible">
+        <div className="invinsible cursor-pointer lg:visible">
           <Hamburger />
         </div>
       </div>

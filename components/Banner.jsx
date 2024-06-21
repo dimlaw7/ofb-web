@@ -25,7 +25,7 @@ const Banner = () => {
           </a>
           <a
             href=""
-            className="inline-flex h-12 min-w-32 items-center justify-center rounded-xl bg-black text-white lg:px-8"
+            className="inline-flex h-12 min-w-32 items-center justify-center rounded-xl bg-black text-white"
           >
             <Image src="/icons/playstore.svg" width={30} height={30} />
             <div className="font-rubik">

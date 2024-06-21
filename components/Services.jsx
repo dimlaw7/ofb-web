@@ -30,11 +30,11 @@ const Services = () => {
                 src={item.icon}
                 width={200}
                 height={200}
-                className="w-20 lg:w-auto"
+                className="w-20 lg:w-40"
               />
               <div className="lg:text-center">
                 <h6 className="mb-4 font-bold text-purp-black">{item.title}</h6>
-                <p className="text-sm font-light">{item.desc}</p>
+                <p className="text-sm leading-6">{item.desc}</p>
               </div>
             </div>
           ))}
