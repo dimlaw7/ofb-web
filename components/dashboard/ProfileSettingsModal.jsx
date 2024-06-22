@@ -1,3 +1,5 @@
+import CancelIcon from "@/public/icons/cancel_icon.svg";
+
 const ProfileSettingsModal = ({ visibility }) => {
   return (
     <section
@@ -10,13 +12,21 @@ const ProfileSettingsModal = ({ visibility }) => {
         onClick={(e) => {
           e.stopPropagation();
         }}
-        className="profile-settings-modal absolute right-0 flex h-full w-2/6 flex-col justify-center bg-white p-8"
+        className="profile-settings-modal fixed flex h-screen w-full flex-col overflow-y-scroll bg-white p-8 lg:right-0 lg:w-2/6"
       >
-        <div className="h mb-8 mt-16">
-          <h2 className="font text-lg font-semibold">Profile Data</h2>
+        <div className="h mb-8">
+          <div
+            className="cancel-icon flex justify-end text-purple-800 hover:cursor-pointer"
+            onClick={() => {
+              visibility(false);
+            }}
+          >
+            <CancelIcon />
+          </div>
+          <h2 className="font mt-8 text-lg font-semibold">Profile Data</h2>
           <p className="text-xs font-medium">Update your profile data</p>
         </div>
-        <div className="mb-8 flex items-center gap-2">
+        <div className="avatar mb-8 flex items-center gap-2 hover:cursor-pointer">
           <div className="h-16 w-16 rounded-full bg-purp-60"></div>
           <p className="text-xs">Tap to change avatar</p>
         </div>
@@ -33,11 +43,12 @@ const ProfileSettingsModal = ({ visibility }) => {
             name="firstname"
             id="firstname"
             value="Oladimeji"
+            disabled
           />
         </div>
         <div className="input flex flex-col">
           <label
-            htmlFor="firstname"
+            htmlFor="lastname"
             className="text-xs font-semibold text-gray-700"
           >
             Lastname
@@ -48,6 +59,7 @@ const ProfileSettingsModal = ({ visibility }) => {
             name="lastname"
             id="lastname"
             value="Lawal"
+            disabled
           />
         </div>
         <div className="input flex flex-col">
@@ -60,6 +72,7 @@ const ProfileSettingsModal = ({ visibility }) => {
             name="mail"
             id="mail"
             value="Dimlaw7@gmail.com"
+            disabled
           />
         </div>
         <div className="input flex flex-col">
@@ -75,7 +88,20 @@ const ProfileSettingsModal = ({ visibility }) => {
             name="phone"
             id="phone"
             value="09015491581"
+            disabled
           />
+        </div>
+        <div>
+          <p className="text-xs text-green-600">
+            You can only change your picture with this form. To change your
+            account information please send an email to customer service.
+          </p>
+          <button
+            className="my-5 block h-10 w-full rounded-xl bg-purp text-sm font-semibold text-white hover:bg-purple-900 disabled:cursor-not-allowed disabled:opacity-75"
+            disabled
+          >
+            Update Profile
+          </button>
         </div>
       </div>
     </section>

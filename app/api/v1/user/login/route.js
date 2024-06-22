@@ -51,7 +51,7 @@ export async function POST(request) {
         username: sqlData.user,
         firstName: sqlData.firstName,
         lastName: sqlData.lastName,
-        wallet: sqlData.wallet,
+        wallet: Number.parseFloat(sqlData.wallet),
       },
       process.env.JWT_SECRET,
       {

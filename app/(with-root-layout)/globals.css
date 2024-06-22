@@ -23,7 +23,7 @@
     @apply inline-block pb-2 text-sm text-[#00000080];
   }
   input {
-    @apply mb-8 py-2 pl-4 text-sm focus:outline-none;
+    @apply mb-8 py-2 pl-4 text-sm focus:outline-none disabled:cursor-not-allowed disabled:opacity-75;
   }
 }
 

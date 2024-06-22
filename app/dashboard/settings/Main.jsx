@@ -29,20 +29,20 @@ const Main = ({ sqlData }) => {
           <div className="mt-8 grid grid-cols-1 gap-2">
             <button
               onClick={() => setProfileSettingsModal(true)}
-              className="inline-flex flex-col items-center justify-center rounded-lg border-2 py-4"
+              className="inline-flex flex-col items-center justify-center rounded-lg border-2 py-4 hover:bg-purp-60"
             >
               Account Settings
             </button>
-            <a className="inline-flex flex-col items-center justify-center rounded-lg border-2 py-4">
+            <a className="inline-flex cursor-pointer flex-col items-center justify-center rounded-lg border-2 py-4 hover:bg-purp-60">
               Change Password
             </a>
-            <a className="inline-flex flex-col items-center justify-center rounded-lg border-2 py-4">
+            <a className="inline-flex cursor-pointer flex-col items-center justify-center rounded-lg border-2 py-4 hover:bg-purp-60">
               Deposit
             </a>
-            <a className="inline-flex flex-col items-center justify-center rounded-lg border-2 py-4">
+            <a className="inline-flex cursor-pointer flex-col items-center justify-center rounded-lg border-2 py-4 hover:bg-purp-60">
               Contact Us
             </a>
-            <a className="inline-flex flex-col items-center justify-center rounded-lg border-2 py-4">
+            <a className="inline-flex cursor-pointer flex-col items-center justify-center rounded-lg border-2 py-4 hover:bg-purp-60">
               Log Out
             </a>
           </div>
