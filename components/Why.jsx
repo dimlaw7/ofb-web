@@ -3,11 +3,11 @@ import Image from "next/image";
 
 const Why = () => {
   return (
-    <section className="why-OFB overflow-x-hidden bg-purple-50 px-4 py-8">
+    <section className="why-OFB overflow-x-hidden px-4 py-8">
       <div className="container mx-auto lg:w-[800px]">
         <div data-aos="fade-left" className="pb-8">
           <h5 className="font-extrabold text-sec lg:text-xl">Why FoodBasket</h5>
-          <h4 className="text-2xl font-extrabold lg:text-3xl">
+          <h4 className="text-2xl font-bold lg:text-3xl">
             Feasting Made Easy!
           </h4>
         </div>

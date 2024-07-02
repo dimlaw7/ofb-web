@@ -17,7 +17,7 @@ const Services = () => {
           className="w-full pb-4 text-center lg:w-3/12 lg:pb-0"
         >
           <h5 className="font-extrabold text-sec lg:text-xl">Services</h5>
-          <h4 className="text-2xl font-extrabold lg:text-3xl">What We Offer</h4>
+          <h4 className="text-2xl font-bold lg:text-3xl">What We Offer</h4>
         </div>
         <div className="wrap-cards flex w-full flex-col gap-8 sm:flex-row lg:gap-0">
           {services.map((item, index) => (
@@ -33,7 +33,9 @@ const Services = () => {
                 className="w-20 lg:w-40"
               />
               <div className="lg:text-center">
-                <h6 className="mb-4 font-bold text-purp-black">{item.title}</h6>
+                <h6 className="mb-4 font-semibold text-purp-black">
+                  {item.title}
+                </h6>
                 <p className="text-sm leading-6">{item.desc}</p>
               </div>
             </div>

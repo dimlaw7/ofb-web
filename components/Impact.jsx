@@ -2,16 +2,21 @@ import Image from "next/image";
 
 const Impact = () => {
   return (
-    <section className="impact flex flex-col-reverse font-Poppins lg:flex-row">
+    <section className="impact flex flex-col-reverse bg-purple-50 font-Poppins lg:flex-row">
       <div className="lg:w-1/2">
-        <Image src="/images/serve-feast.jpg" width={600} height={500} />
+        <Image
+          src="/images/serve-feast.jpg"
+          width={600}
+          height={400}
+          className="sca scale-75"
+        />
       </div>
       <div className="right-col py-8 lg:w-1/2 lg:py-48">
         <h5 className="px-4 font-extrabold uppercase text-sec lg:text-xl">
           Impact
         </h5>
         <div className="mt-4 px-4">
-          <h4 className="mb-2 text-2xl font-extrabold lg:text-3xl">
+          <h4 className="mb-2 text-2xl font-medium lg:text-3xl">
             Making an Impact through Food Basket
           </h4>
           <p>

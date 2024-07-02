@@ -1,4 +1,5 @@
 import CancelIcon from "@/public/icons/cancel_icon.svg";
+import Image from "next/image";
 
 const ProfileSettingsModal = ({ visibility }) => {
   return (
@@ -27,7 +28,14 @@ const ProfileSettingsModal = ({ visibility }) => {
           <p className="text-xs font-medium">Update your profile data</p>
         </div>
         <div className="avatar mb-8 flex items-center gap-2 hover:cursor-pointer">
-          <div className="h-16 w-16 rounded-full bg-purp-60"></div>
+          <div className="h-16 w-16 rounded-full bg-purp-60">
+            <Image
+              src="/icons/profile_account.svg"
+              width={64}
+              height={64}
+              alt="My DP"
+            />
+          </div>
           <p className="text-xs">Tap to change avatar</p>
         </div>
         <div className="input flex flex-col">

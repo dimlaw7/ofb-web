@@ -19,6 +19,9 @@
 }
 
 @layer components {
+  a {
+    @apply hover:underline;
+  }
   label {
     @apply inline-block pb-2 text-sm text-[#00000080];
   }
@@ -34,6 +37,12 @@
       0 40px 40px 0 rgba(0, 0, 0, 0.13),
       0 90px 53px 0 rgba(0, 0, 0, 0.08),
       0 159px 64px 0 rgba(0, 0, 0, 0.02);
+  }
+  .ellipse-yellow {
+    @apply absolute -bottom-[50%] -right-[20%] z-10 h-[500px] w-[500px] rounded-full bg-yel blur-[200px];
+  }
+  .ellipse-pink {
+    @apply absolute -left-[20%] z-10 h-52 w-52 rounded-full bg-sec blur-[200px] lg:-top-2/4 lg:h-[500px] lg:w-[500px] lg:blur-[400px];
   }
 }
 

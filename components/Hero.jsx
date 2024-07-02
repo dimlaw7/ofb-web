@@ -3,21 +3,19 @@ import Image from "next/image";
 const Hero = () => {
   return (
     <>
-      <div className="ellipse absolute -left-[20%] z-10 h-52 w-52 rounded-full bg-sec blur-[200px] lg:-top-2/4 lg:h-[500px] lg:w-[500px] lg:blur-[400px]">
-        {/* Blur Pink ellipse floating in hero */}
-      </div>
+      <div className="ellipse">{/* Blur Pink ellipse floating in hero */}</div>
       <section className="hero relative overflow-hidden bg-[#EAE1F3]">
-        <div className="ellipse absolute -bottom-[50%] -right-[20%] z-10 h-[500px] w-[500px] rounded-full bg-yel blur-[200px]">
+        <div className="ellipse-yellow">
           {/* Blur Yellow ellipse floating in hero */}
         </div>
         <div className="hero-container container relative z-10 mx-auto mt-24 flex flex-col items-center justify-center px-8 lg:mt-32 lg:flex-row lg:px-8">
           <div className="flex flex-col gap-16 lg:w-7/12">
             <div className="mb-4 flex flex-col">
-              <h1 className="text mb-8 text-2xl font-extrabold leading-normal lg:text-4xl lg:leading-normal">
+              <h1 className="text mb-8 text-2xl font-semibold leading-normal lg:text-4xl lg:leading-normal">
                 Ticket to year-round savings{" "}
                 <span className="text-sec">and abundant holiday meals.</span>
               </h1>
-              <p className="font-jost">
+              <p className="">
                 FoodBasket app is your one-stop shop for affordable,
                 high-quality groceries. Save monthly, feast annually!
               </p>
