@@ -1,15 +1,12 @@
 "use client";
 import { useState } from "react";
+import useRadix from "@/hooks/useRadix";
 import TopupModal from "./modal/TopupModal";
 import QuicksaveBtn from "./QuicksaveBtn";
 
 const WalletOverview = ({ userData }) => {
   const [showModal, setShowModal] = useState(false);
-  // Split the input value into integer and decimal parts
-  let [integerPart, decimalPart] = userData.wallet.toFixed(2).split(".");
-  // Format the integer part with commas for thousands separators
-  integerPart = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  const wallet = `${integerPart}.${decimalPart}`;
+  const [wallet] = useRadix(userData.wallet);
 
   return (
     <>
