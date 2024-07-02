@@ -13,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="font-Poppins">
+      <body className="font-openSans">
         <Header />
         {children}
         <Footer />

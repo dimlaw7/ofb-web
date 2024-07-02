@@ -11,11 +11,11 @@ const Hero = () => {
         <div className="hero-container container relative z-10 mx-auto mt-24 flex flex-col items-center justify-center px-8 lg:mt-32 lg:flex-row lg:px-8">
           <div className="flex flex-col gap-16 lg:w-7/12">
             <div className="mb-4 flex flex-col">
-              <h1 className="text mb-8 text-2xl font-semibold leading-normal lg:text-4xl lg:leading-normal">
+              <h1 className="text mb-8 text-2xl font-bold leading-normal lg:text-4xl lg:leading-normal">
                 Ticket to year-round savings{" "}
                 <span className="text-sec">and abundant holiday meals.</span>
               </h1>
-              <p className="">
+              <p className="leading-8">
                 FoodBasket app is your one-stop shop for affordable,
                 high-quality groceries. Save monthly, feast annually!
               </p>

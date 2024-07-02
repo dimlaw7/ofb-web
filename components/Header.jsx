@@ -8,7 +8,7 @@ import Hamburger from "@/public/icons/hamburger-2.svg";
 const Header = () => {
   const [navBar, setnavBar] = useState(false);
   return (
-    <header className="fixed left-1/2 top-2 z-50 flex w-[98%] -translate-x-1/2 items-center justify-between rounded-2xl border border-[#EAE1F3] bg-white px-8 py-4 shadow-lg lg:top-4">
+    <header className="fixed left-1/2 top-2 z-50 flex w-[95%] -translate-x-1/2 items-center justify-between rounded-2xl border border-[#EAE1F3] bg-white px-8 py-4 shadow-lg lg:top-4">
       <HeaderLogo css="text-purp" />
       <nav
         className={`left-10 flex overflow-y-hidden transition-all max-sm:absolute max-sm:left-2 max-sm:right-2  max-sm:top-[73px] max-sm:flex-col max-sm:bg-inherit lg:gap-8 ${navBar != true ? "max-sm:h-0 max-sm:opacity-0" : "opacity-100 max-sm:h-[50vh]"}`}
