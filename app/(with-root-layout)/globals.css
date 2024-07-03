@@ -39,7 +39,7 @@
       0 159px 64px 0 rgba(0, 0, 0, 0.02);
   }
   .ellipse-yellow {
-    @apply absolute -bottom-[50%] -right-[20%] z-10 h-[500px] w-[500px] rounded-full bg-yel blur-[200px];
+    @apply absolute -bottom-[50%] -right-[20%] z-10 h-[500px] w-[500px] rounded-full bg-purp blur-[200px];
   }
   .ellipse-pink {
     @apply absolute -left-[20%] z-10 h-52 w-52 rounded-full bg-sec blur-[200px] lg:-top-2/4 lg:h-[500px] lg:w-[500px] lg:blur-[400px];

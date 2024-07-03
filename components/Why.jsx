@@ -1,5 +1,6 @@
 import { why } from "@/const";
 import Image from "next/image";
+import Link from "next/link";
 
 const Why = () => {
   return (
@@ -15,12 +16,15 @@ const Why = () => {
           {why.map((item, index) => (
             <div
               // data-aos="zoom-in"
-              className="card flex flex-col items-center gap-4 rounded-xl border border-light bg-white px-4 py-8 text-center shadow sm:w-1/3"
+              className="card flex flex-col items-center gap-4 rounded-xl border border-light bg-white px-8 py-8 text-center shadow sm:w-1/3"
               key={index}
             >
               <Image src={item.icon} width={60} height={60} />
               <h6 className="font-bold">{item.title}</h6>
-              <p className="text-[#00000080]">{item.desc}</p>
+              <p>{item.desc}</p>
+              <Link href="/about" className="font-semibold text-purp">
+                Learn More
+              </Link>
             </div>
           ))}
         </div>

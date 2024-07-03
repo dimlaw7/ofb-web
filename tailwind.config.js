@@ -17,7 +17,8 @@ module.exports = {
       },
       colors: {
         purp: "#6420AA",
-        sec: "#F85E95",
+        sec: "#BE0208",
+        tertiary: "#F85E95",
         yel: "#FACD49",
         light: "#E5E4E4",
         "purp-60": "rgba(234,225,243,0.6)",

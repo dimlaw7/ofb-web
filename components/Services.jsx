@@ -23,7 +23,7 @@ const Services = () => {
           {services.map((item, index) => (
             <div
               // data-aos={item.aos}
-              className={`card flex max-w-full shrink-0 items-start gap-4 px-4 py-2 sm:w-1/4 lg:flex-col lg:items-center lg:gap-4`}
+              className={`card flex max-w-full shrink-0 items-start gap-4 px-4 py-2 sm:w-1/4 md:flex-col md:items-center md:gap-4`}
               key={index}
             >
               <Image
