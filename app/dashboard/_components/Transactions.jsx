@@ -3,7 +3,7 @@ import Image from "next/image";
 import ActivitySlip from "./ActivitySlip";
 import NoData from "@/public/illustrations/noData.svg";
 
-const RecentActivity = async ({ userData }) => {
+const Transactions = async ({ userData }) => {
   const { username } = userData;
 
   let connection;
@@ -17,7 +17,7 @@ const RecentActivity = async ({ userData }) => {
 
     if (sqlData.length > 0) {
       return (
-        <section className="activity mx-4 my-16 flex flex-col bg-white px-4 py-8 lg:flex-row">
+        <section className="activity mx-4 my-8 flex flex-col border bg-white px-4 py-8 lg:mx-0 lg:flex-row">
           <div className="transactions">
             <h1 className="font-bold">Transaction Slips</h1>
             {data.map((value, index) => (
@@ -30,19 +30,11 @@ const RecentActivity = async ({ userData }) => {
               />
             ))}
           </div>
-          <div className="ads my-24 hidden w-5/12 items-center justify-center lg:flex">
-            <Image
-              src="/images/ofb-ad.jpg"
-              width={300}
-              height={300}
-              alt="ofb-advert"
-            />
-          </div>
         </section>
       );
     } else {
       return (
-        <section className="activity mx-4 my-16 flex flex-col bg-white px-4 py-8 lg:flex-row">
+        <section className="activity my-16 flex flex-col border bg-white px-4 py-8 lg:mx-0 lg:flex-row">
           <div className="transactions">
             <h1 className="font-bold">Transaction Slips</h1>
             <div className="mt-8 flex flex-col items-center gap-8">
@@ -51,14 +43,6 @@ const RecentActivity = async ({ userData }) => {
                 You have not made any transaction yet!
               </p>
             </div>
-          </div>
-          <div className="ads my-24 hidden w-5/12 items-center justify-center lg:flex">
-            <Image
-              src="/images/ofb-ad.jpg"
-              width={300}
-              height={300}
-              alt="ofb-advert"
-            />
           </div>
         </section>
       );
@@ -86,4 +70,4 @@ const RecentActivity = async ({ userData }) => {
   }
 };
 
-export default RecentActivity;
+export default Transactions;

@@ -2,7 +2,7 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import pool from "@/db";
 import jwt from "jsonwebtoken";
-import SideNav from "@/components/dashboard/SideNav";
+import SideNav from "@/app/dashboard/_components/SideNav";
 import DashboardHeader from "@/components/dashboard/DashboardHeader";
 import PageDetails from "@/components/dashboard/PageDetails";
 import Left1 from "@/public/icons/left1.svg";

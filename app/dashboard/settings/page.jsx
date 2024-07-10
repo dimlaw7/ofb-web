@@ -2,8 +2,8 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import pool from "@/db";
 import jwt from "jsonwebtoken";
-import SideNav from "@/components/dashboard/SideNav";
-import DashboardHeader from "@/components/dashboard/DashboardHeader";
+import SideNav from "@/app/dashboard/_components/SideNav";
+import DashboardHeader from "@/app/dashboard/_components/DashboardHeader";
 import { formatDate } from "@/const/dateTimeNow";
 import Main from "./Main";
 

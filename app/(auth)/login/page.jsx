@@ -1,10 +1,11 @@
-import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
-import jwt from "jsonwebtoken";
+import LoginForm from "@/app/(auth)/login/_components/LoginForm";
 import Sidebar from "@/components/auth/Sidebar";
 import ReturnHome from "@/components/ReturnHome";
-import LoginForm from "@/components/auth/LoginForm";
+import jwt from "jsonwebtoken";
+import { cookies } from "next/headers";
+import Image from "next/image";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
 export const metadata = {
   title: "FoodBasket | Login",
@@ -20,6 +21,14 @@ const page = () => {
       <div className="flex h-screen items-center justify-center">
         <ReturnHome />
         <div className="left max-h-screen overflow-y-auto px-8 py-8 lg:w-4/12 lg:px-16">
+          <div className="flex justify-center">
+            <Image
+              src="/images/ofb.jpg"
+              height={100}
+              width={100}
+              alt="Image Logo"
+            />
+          </div>
           <h1 className="text-center text-2xl font-extrabold leading-[70px] sm:text-4xl sm:leading-[70px]">
             Account Login
           </h1>

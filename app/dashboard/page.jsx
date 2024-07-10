@@ -1,11 +1,16 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import jwt from "jsonwebtoken";
-import DashboardHeader from "../../components/dashboard/DashboardHeader";
-import SideNav from "@/components/dashboard/SideNav";
-import WalletOverview from "../../components/dashboard/WalletOverview";
-import Services from "@/components/dashboard/DashboardServices";
-import RecentActivity from "@/components/dashboard/RecentActivity";
+import DashboardHeader from "@/app/dashboard/_components/DashboardHeader";
+import SideNav from "@/app/dashboard/_components/SideNav";
+import WalletOverview from "@/app/dashboard/_components/WalletOverview";
+import Services from "@/app/dashboard/_components/Services";
+import DashboardSubHeader from "@/components/dashboard/DashboardSubHeader";
+import SavingsCard from "./_components/SavingsCard";
+import PackageType from "./_components/PackageType";
+import DebtWarning from "./_components/DebtWarning";
+import Advert from "./_components/Advert";
+import Transactions from "./_components/Transactions";
 
 const page = () => {
   const cookieStore = cookies();
@@ -20,9 +25,22 @@ const page = () => {
           <SideNav userData={decoded} />
           <div className="lg:ml-64">
             <DashboardHeader userData={decoded} />
-            <WalletOverview userData={decoded} />
-            <Services />
-            <RecentActivity userData={decoded} />
+            <DashboardSubHeader userData={decoded} />
+            <DebtWarning />
+            <section className="main my-6 flex w-full flex-col justify-between gap-4 px-4 lg:flex-row lg:px-8">
+              <div className="lt-col lg:w-[700px]">
+                <div className="wallet-package mb-8 flex">
+                  <WalletOverview userData={decoded} />
+                  <PackageType />
+                </div>
+                <Services />
+                <Transactions userData={decoded} />
+              </div>
+              <div className="rt-col flex flex-col gap-4">
+                <SavingsCard userData={decoded} />
+                <Advert />
+              </div>
+            </section>
           </div>
         </section>
       </>

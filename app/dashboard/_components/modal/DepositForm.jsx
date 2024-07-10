@@ -37,13 +37,15 @@ const DepositForm = ({
           onChange={handleMonth}
         >
           {months.map((month, index) => {
-            if (index + 1 > currentMonth) {
-              return (
-                <option key={index} value={index + 1}>
-                  {month}
-                </option>
-              );
-            }
+            return (
+              <option
+                key={index}
+                value={index + 1}
+                selected={index + 1 === currentMonth}
+              >
+                {month}
+              </option>
+            );
           })}
         </select>
         <button

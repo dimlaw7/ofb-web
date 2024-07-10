@@ -5,7 +5,7 @@ import HeaderLogo from "@/components/HeaderLogo";
 import Image from "next/image";
 import { dashboardNavLinks } from "@/const";
 import Link from "next/link";
-import Hamburger from "@/public/icons/hamburger-2.svg";
+import { Menu } from "lucide-react";
 
 const SideNav = ({ userData }) => {
   const [showSideNav, setShowSideNav] = useState(false);
@@ -57,8 +57,8 @@ const SideNav = ({ userData }) => {
               key={index}
               className={`${pathname === item.url ? "bg-purp-60" : ""} px-9 py-4 text-white hover:outline hover:outline-2 hover:outline-purp-60`}
             >
-              <Link href={item.url} className="flex">
-                <Image src={item.icon} width={24} height={25} alt="icon" />
+              <Link href={item.url} className="flex items-center">
+                <item.icon />
                 <span className="ml-4 text-sm ">{item.title}</span>
               </Link>
             </div>
@@ -66,10 +66,10 @@ const SideNav = ({ userData }) => {
         </nav>
       </aside>
       <div
-        className="absolute right-4 top-[30px] cursor-pointer hover:bg-purp-60 lg:invisible"
+        className="absolute left-64 top-[30px] cursor-pointer hover:bg-purp-60"
         onClick={() => setShowSideNav(!showSideNav)}
       >
-        <Hamburger />
+        <Menu />
       </div>
     </>
   );

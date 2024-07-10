@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 import pool from "@/db";
 import jwt from "jsonwebtoken";
 import DashboardHeader from "@/components/dashboard/DashboardHeader";
-import SideNav from "@/components/dashboard/SideNav";
+import SideNav from "@/app/dashboard/_components/SideNav";
 import PageDetails from "@/components/dashboard/PageDetails";
 import TableHead from "./components/TableHead";
 import TableBody from "./components/TableBody";

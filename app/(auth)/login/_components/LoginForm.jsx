@@ -1,4 +1,5 @@
 "use client";
+import { Eye, EyeOff } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Circles } from "react-loader-spinner";
@@ -10,6 +11,7 @@ const LoginForm = () => {
     pass: "",
   });
   const [loader, setLoader] = useState(false);
+  const [showPassword, setShowPassword] = useState("password");
 
   const router = useRouter();
 
@@ -21,7 +23,7 @@ const LoginForm = () => {
         icon: "error",
         iconColor: "#DC3545",
         title: "Error",
-        text: "Username or Email Cannot Be Empty",
+        text: "Email or Password Cannot Be Empty",
         confirmButtonColor: "#DC3545",
       });
       return;
@@ -78,22 +80,40 @@ const LoginForm = () => {
       <label htmlFor="pass">
         Password <span className="text-red-500">*</span>
       </label>
-      <input
-        required
-        type="password"
-        name="pass"
-        id="pass"
-        value={data.pass}
-        className="w-full border border-purple-300 text-base"
-        placeholder="Password"
-        onInput={(evt) => {
-          const { name, value } = evt.target;
-          setData({
-            ...data,
-            [name]: value,
-          });
-        }}
-      />
+      <div className="relative">
+        <input
+          required
+          type={showPassword}
+          name="pass"
+          id="pass"
+          value={data.pass}
+          className="w-full border border-purple-300 text-base"
+          placeholder="Password"
+          onInput={(evt) => {
+            const { name, value } = evt.target;
+            setData({
+              ...data,
+              [name]: value,
+            });
+          }}
+        />
+        {showPassword == "password" ? (
+          <div
+            onClick={() => setShowPassword("text")}
+            className="absolute right-2 top-3 hover:cursor-pointer"
+          >
+            <EyeOff size={18} color="#A855F7" />
+          </div>
+        ) : (
+          <div
+            onClick={() => setShowPassword("password")}
+            className="absolute right-2 top-2 hover:cursor-pointer"
+          >
+            <Eye size={20} color="#A855F7" />
+          </div>
+        )}
+      </div>
+
       <button
         type="submit"
         className="flex w-full justify-center gap-2 bg-purp px-8 py-2 text-sm text-white hover:bg-purple-900 disabled:bg-light"

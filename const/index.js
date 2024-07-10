@@ -1,3 +1,12 @@
+import {
+  ArrowLeftRight,
+  BarChartBig,
+  Gauge,
+  LogOut,
+  Settings,
+  ShieldEllipsis,
+} from "lucide-react";
+
 export const navLinks = [
   { title: "Home", url: "/" },
   { title: "Get Started", url: "/get-started" },
@@ -98,17 +107,21 @@ export const dashboardNavLinks = [
   {
     title: "Dashboard",
     url: "/dashboard",
-    icon: "/icons/dashicons_dashboard.svg",
+    icon: Gauge,
   },
-  { title: "Wallet", url: "", icon: "/icons/wallet.svg" },
-  { title: "Loan", url: "", icon: "/icons/loan.svg" },
-  { title: "Account", url: "/dashboard/settings", icon: "/icons/account.svg" },
+  {
+    title: "Transactions",
+    url: "/dashboard/transactions",
+    icon: ArrowLeftRight,
+  },
+  { title: "Budget", url: "/dashboard/budget", icon: BarChartBig },
+  { title: "Settings", url: "/dashboard/settings", icon: Settings },
   {
     title: "Admin Panel",
     url: "/dashboard/admin",
-    icon: "/icons/logout.svg",
+    icon: ShieldEllipsis,
   },
-  { title: "Logout", url: "", icon: "/icons/logout.svg" },
+  { title: "Logout", url: "/api/v1/user/logout", icon: LogOut },
 ];
 
 export const bankInfo = [

@@ -84,7 +84,7 @@ const TopupModal = ({ closeModal }) => {
       onClick={(e) => {
         closeModal(false);
       }}
-      className="quick-save-modal fixed bottom-0 left-0 top-0 flex w-full items-center justify-center bg-[#00000080]"
+      className="quick-save-modal fixed bottom-0 left-0 top-0 z-50 flex w-full items-center justify-center bg-[#00000080]"
     >
       <div
         className="modal flex w-80 flex-col bg-white p-8"
