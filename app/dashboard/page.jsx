@@ -1,5 +1,4 @@
 import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
 import jwt from "jsonwebtoken";
 import DashboardHeader from "@/app/dashboard/_components/DashboardHeader";
 import SideNav from "@/app/dashboard/_components/SideNav";
@@ -46,7 +45,7 @@ const page = () => {
       </>
     );
   } catch (error) {
-    redirect(`/login`);
+    console.log(error.message);
   }
 };
 

@@ -41,7 +41,7 @@ const DepositForm = ({
               <option
                 key={index}
                 value={index + 1}
-                selected={index + 1 === currentMonth}
+                selected={index + 1 === currentMonth + 1}
               >
                 {month}
               </option>

@@ -1,13 +1,14 @@
-import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
-import pool from "@/db";
-import jwt from "jsonwebtoken";
 import SideNav from "@/app/dashboard/_components/SideNav";
-import DashboardHeader from "@/components/dashboard/DashboardHeader";
+import DashboardHeader from "@/app/dashboard/_components/DashboardHeader";
 import PageDetails from "@/components/dashboard/PageDetails";
-import Left1 from "@/public/icons/left1.svg";
 import { formatDate } from "@/const/dateTimeNow";
+import pool from "@/db";
+import Left1 from "@/public/icons/left1.svg";
+import jwt from "jsonwebtoken";
+import { cookies } from "next/headers";
 import Link from "next/link";
+import { redirect } from "next/navigation";
+import { months } from "@/const";
 
 function isEmpty(obj) {
   return Object.keys(obj).length === 0;
@@ -31,7 +32,7 @@ const page = async ({ params, searchParams }) => {
     }
 
     const [sqlData] = await connection.query(
-      "SELECT t.transaction_id id, t.transaction_date date, t.transaction_status status, t.transaction_type type, t.transaction_amount amount, t.payment_method method, CONCAT(p.firstName, ' ', p.lastName) AS fullName, p.user FROM transactions t INNER JOIN profiles p ON t.member_id = p.id WHERE t.transaction_id = ? ORDER BY id DESC LIMIT 1",
+      "SELECT t.transaction_id id, t.transaction_date date, t.transaction_status status, t.transaction_type type, t.transaction_amount amount, t.payment_method method, CONCAT(p.firstName, ' ', p.lastName) AS fullName, t.month_ref, p.user, p.id userID FROM transactions t INNER JOIN profiles p ON t.member_id = p.id WHERE t.transaction_id = ? ORDER BY id DESC LIMIT 1",
       [params.id],
     );
     const [data] = sqlData;
@@ -47,6 +48,16 @@ const page = async ({ params, searchParams }) => {
           const [updateWallet] = await connection.query(
             "UPDATE profiles SET wallet = wallet + ? WHERE user = ?",
             [data.amount, data.user],
+          );
+          const [updateContributions] = await connection.query(
+            "INSERT INTO `contributions`(`month`, `month_number`, `profile_id`, `year`, `datetime`) VALUES (?,?,?,?,?)",
+            [
+              months[data.month_ref],
+              data.month_ref,
+              data.userID,
+              2024,
+              data.date,
+            ],
           );
           throw new Error("Data Updated");
         } else {

@@ -4,6 +4,7 @@ import { navLinks } from "@/const";
 import Link from "next/link";
 import HeaderLogo from "./HeaderLogo";
 import Hamburger from "@/public/icons/hamburger-2.svg";
+import { Menu } from "lucide-react";
 
 const Header = () => {
   const [navBar, setnavBar] = useState(false);
@@ -39,7 +40,7 @@ const Header = () => {
         </Link>
       </nav>
       <div className="hamburger lg:hidden" onClick={() => setnavBar(!navBar)}>
-        <Hamburger />
+        <Menu />
       </div>
     </header>
   );

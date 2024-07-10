@@ -66,7 +66,7 @@ const SideNav = ({ userData }) => {
         </nav>
       </aside>
       <div
-        className="absolute left-64 top-[30px] cursor-pointer hover:bg-purp-60"
+        className="absolute left-[17px] top-[19px] cursor-pointer hover:bg-purp-60 lg:left-[17rem] lg:top-[29px]"
         onClick={() => setShowSideNav(!showSideNav)}
       >
         <Menu />

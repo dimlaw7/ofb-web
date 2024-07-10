@@ -5,9 +5,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { PiggyBank } from "lucide-react";
 import { months } from "@/const";
 import pool from "@/db";
+import { PiggyBank } from "lucide-react";
 
 const SavingsCard = async ({ userData }) => {
   const { username } = userData;
@@ -19,7 +19,11 @@ const SavingsCard = async ({ userData }) => {
       "SELECT c.month_number, p.id FROM contributions c INNER JOIN profiles p ON c.profile_id = p.id WHERE p.user = ? ORDER BY c.month_number",
       [username],
     );
-    sqlData.length > 0 ? console.log(sqlData) : console.log("No data");
+
+    const arrOfMonthsCotributed = [];
+    sqlData.length > 0
+      ? sqlData.map((item) => arrOfMonthsCotributed.push(item.month_number))
+      : "";
 
     return (
       <Card className="w-80">
@@ -33,7 +37,7 @@ const SavingsCard = async ({ userData }) => {
           {months.map((item, index) => (
             <div
               key={index}
-              className={`text-am flex flex-col items-center gap-0.5 rounded-sm border p-0.5 ${sqlData.length > 0 ? "bg-purple-800 text-white" : "bg-purple-100"} `}
+              className={`text-am flex flex-col items-center gap-0.5 rounded-sm border p-0.5 ${arrOfMonthsCotributed.includes(index) ? "bg-purple-800 text-white" : "bg-purple-100"} `}
             >
               <h3 className="text-xs font-semibold">{item.slice(0, 3)}</h3>
               <PiggyBank color="#fbbf24" />

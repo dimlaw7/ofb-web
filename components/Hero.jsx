@@ -8,17 +8,16 @@ const Hero = () => {
         <div className="ellipse-yellow">
           {/* Blur Yellow ellipse floating in hero */}
         </div>
-        <div className="hero-container container relative z-10 mx-auto mt-24 flex flex-col items-center justify-center px-8 lg:mt-32 lg:flex-row lg:px-8">
+        <div className="hero-container container relative z-10 mx-auto mt-24 flex flex-col items-center justify-center px-4 lg:mt-32 lg:flex-row lg:px-8">
           <div className="flex flex-col gap-16 lg:w-8/12">
             <div className="mb-4 flex flex-col">
-              <h1 className="text mb-8 text-[1.4rem] font-bold leading-8 md:text-4xl md:leading-normal">
-                Ticket to year-round savings{" "}
-                <span className="block text-sec">and </span>
-                <span className="">abundant holiday meals.</span>
+              <h1 className="text mb-8 font-Poppins text-3xl font-bold leading-[3rem] md:text-4xl md:leading-normal">
+                Ticket to year-round savings and abundant{" "}
+                <span className="text-sec">holiday meals.</span>
               </h1>
-              <p className="max-w-xl leading-8">
-                FoodBasket app is your one-stop shop for affordable,
-                high-quality groceries. Save monthly, feast annually!
+              <p className="max-w-xl leading-6">
+                Save monthly and convert your budget into affordable foodstuff.
+                Start saving today for a bountiful tomorrow!
               </p>
             </div>
             <div className="flex max-lg:justify-around">
@@ -49,7 +48,7 @@ const Hero = () => {
               height={462}
               className="relative top-4 z-20 hidden lg:block"
             />
-            <div className="send-icon ofb-shadow bg-tertiary absolute left-[60%] top-[70%] hidden h-[40px] w-[40px] items-center justify-center rounded-full lg:flex">
+            <div className="send-icon ofb-shadow absolute left-[60%] top-[70%] hidden h-[40px] w-[40px] items-center justify-center rounded-full bg-tertiary lg:flex">
               <Image src="/icons/send.svg" width={25} height={25} />
             </div>
             <div className="user-icon ofb-shadow absolute left-[90%] top-[40%] hidden h-[40px] w-[40px] items-center justify-center rounded-full bg-yel lg:flex">
