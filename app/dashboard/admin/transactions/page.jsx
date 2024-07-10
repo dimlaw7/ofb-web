@@ -1,12 +1,12 @@
-import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
-import pool from "@/db";
-import jwt from "jsonwebtoken";
+import DashboardHeader from "@/app/dashboard/_components/DashboardHeader";
 import SideNav from "@/app/dashboard/_components/SideNav";
-import DashboardHeader from "@/components/dashboard/DashboardHeader";
 import PageDetails from "@/components/dashboard/PageDetails";
 import { formatDate } from "@/const/dateTimeNow";
+import pool from "@/db";
+import jwt from "jsonwebtoken";
+import { cookies } from "next/headers";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
 const page = async () => {
   const cookieStore = cookies();
