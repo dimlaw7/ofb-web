@@ -17,7 +17,7 @@ const Transactions = async ({ userData }) => {
 
     if (sqlData.length > 0) {
       return (
-        <section className="activity mx-4 my-8 flex flex-col border bg-white px-4 py-8 lg:mx-0 lg:flex-row">
+        <section className="activity my-8 flex flex-col border bg-white px-4 py-8 lg:mx-0 lg:flex-row">
           <div className="transactions">
             <h1 className="font-bold">Transaction Slips</h1>
             {data.map((value, index) => (
@@ -48,7 +48,7 @@ const Transactions = async ({ userData }) => {
       );
     }
   } catch (err) {
-    <section className="activity mx-4 my-16 flex flex-col bg-white px-4 py-8 lg:flex-row">
+    <section className="activity my-16 flex flex-col bg-white px-4 py-8 lg:flex-row">
       <div className="transactions">
         <h1 className="font-bold">Transaction Slips</h1>
         <h6>

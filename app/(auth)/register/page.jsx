@@ -1,12 +1,12 @@
 "use client";
-import { useState } from "react";
-import Form1 from "@/components/auth/Form1";
-import Form2 from "@/components/auth/Form2";
-import Form3 from "@/components/auth/Form3";
-import Sidebar from "@/components/auth/Sidebar";
+import Sidebar from "@/app/(auth)/_components/Sidebar";
+import Form1 from "@/app/(auth)/register/_components/Form1";
+import Form2 from "@/app/(auth)/register/_components/Form2";
+import Form3 from "@/app/(auth)/register/_components/Form3";
 import ReturnHome from "@/components/ReturnHome";
 import Link from "next/link";
-import Image from "next/image";
+import { useState } from "react";
+import LoginHeaderLogo from "../_components/LoginHeaderLogo";
 
 const page = () => {
   const [activeForm, setActiveForm] = useState(0);
@@ -29,20 +29,10 @@ const page = () => {
     <div className="flex h-screen items-center justify-center">
       <ReturnHome />
       <div className="left max-h-screen overflow-y-auto px-8 py-8 lg:w-4/12 lg:px-16">
-        <div className="flex justify-center">
-          <Image
-            src="/images/ofb.jpg"
-            height={100}
-            width={100}
-            alt="Image Logo"
-          />
-        </div>
-        <h1 className="text-center text-2xl font-extrabold leading-[70px] sm:text-4xl sm:leading-[70px]">
-          Create Account
-        </h1>
-        <p className="text-center text-sm text-[#00000080] lg:text-base">
-          Create an account in few seconds
-        </p>
+        <LoginHeaderLogo
+          title="Create Account"
+          desc="Create an account in few seconds"
+        />
         {formElements[activeForm]}
         <div className="mt-4">
           <p className="text-sm">

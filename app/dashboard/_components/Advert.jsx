@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Advert = () => {
   return (
-    <div className="ads rounded-sm">
+    <div className="ads flex justify-center rounded-sm">
       <Image
         src="/images/ofb-ad.jpg"
         width={320}

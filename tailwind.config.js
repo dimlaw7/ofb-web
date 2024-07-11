@@ -18,6 +18,7 @@ module.exports = {
     // },
     extend: {
       backgroundImage: {
+        "home-hero-bg": "url(/images/hero.jpg)",
         "hero-register": "url(/images/hero-register.jpg)",
         "hero-testimonies": "url(/images/hero-testimonies.jpg)",
         "package-design": "url(/images/bg-pattern.png)",

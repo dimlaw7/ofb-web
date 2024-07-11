@@ -3,10 +3,12 @@ import { useState } from "react";
 import { Circles } from "react-loader-spinner";
 import Swal from "sweetalert2";
 import "sweetalert2/dist/sweetalert2.min.css";
+import { Eye, EyeOff } from "lucide-react";
 
 const Form3 = ({ data, setData }) => {
   const router = useRouter();
   const [loader, setLoader] = useState(false);
+  const [showPassword, setShowPassword] = useState("password");
 
   //Function on Form Submit
   const handleChange = async (e) => {
@@ -149,37 +151,71 @@ const Form3 = ({ data, setData }) => {
       <label htmlFor="pass">
         Password <span className="text-red-500">*</span>
       </label>
-      <input
-        type="password"
-        name="pass"
-        id="pass"
-        className="w-full border border-purple-300"
-        placeholder="Password"
-        onInput={(evt) => {
-          const { name, value } = evt.target;
-          setData({
-            ...data,
-            [name]: value,
-          });
-        }}
-      />
+      <div className="relative">
+        <input
+          type={showPassword}
+          name="pass"
+          id="pass"
+          className="w-full border border-purple-300"
+          placeholder="Password"
+          onInput={(evt) => {
+            const { name, value } = evt.target;
+            setData({
+              ...data,
+              [name]: value,
+            });
+          }}
+        />
+        {showPassword == "password" ? (
+          <div
+            onClick={() => setShowPassword("text")}
+            className="absolute right-2 top-3 hover:cursor-pointer"
+          >
+            <EyeOff size={18} color="#A855F7" />
+          </div>
+        ) : (
+          <div
+            onClick={() => setShowPassword("password")}
+            className="absolute right-2 top-2 hover:cursor-pointer"
+          >
+            <Eye size={20} color="#A855F7" />
+          </div>
+        )}
+      </div>
       <label htmlFor="pass2">
         Confirm Password <span className="text-red-500">*</span>
       </label>
-      <input
-        type="password"
-        name="pass2"
-        id="pass2"
-        className="w-full border border-purple-300"
-        placeholder="Password again"
-        onInput={(evt) => {
-          const { name, value } = evt.target;
-          setData({
-            ...data,
-            [name]: value,
-          });
-        }}
-      />
+      <div className="relative">
+        <input
+          type={showPassword}
+          name="pass2"
+          id="pass2"
+          className="w-full border border-purple-300"
+          placeholder="Password again"
+          onInput={(evt) => {
+            const { name, value } = evt.target;
+            setData({
+              ...data,
+              [name]: value,
+            });
+          }}
+        />
+        {showPassword == "password" ? (
+          <div
+            onClick={() => setShowPassword("text")}
+            className="absolute right-2 top-3 hover:cursor-pointer"
+          >
+            <EyeOff size={18} color="#A855F7" />
+          </div>
+        ) : (
+          <div
+            onClick={() => setShowPassword("password")}
+            className="absolute right-2 top-2 hover:cursor-pointer"
+          >
+            <Eye size={20} color="#A855F7" />
+          </div>
+        )}
+      </div>
       <button
         type="submit"
         disabled={data.email ? "" : "disabled"}

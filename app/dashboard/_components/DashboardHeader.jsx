@@ -6,8 +6,8 @@ const DashboardHeader = ({ userData }) => {
   const wallet = useRadix(userData?.wallet);
   return (
     <header className="flex items-center justify-between self-start border border-b border-purp-60 bg-white px-4 py-4 shadow-md">
-      <div className="left-col invisible flex items-center gap-3">
-        <div className="hover:cursor-pointer">
+      <div className="left-col flex items-center gap-3">
+        <div className=" invisible hover:cursor-pointer">
           <Menu />
         </div>
         <div className="hidden hover:cursor-pointer lg:block">

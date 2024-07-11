@@ -1,11 +1,11 @@
-import LoginForm from "@/app/(auth)/login/_components/LoginForm";
-import Sidebar from "@/components/auth/Sidebar";
+import LoginForm from "@/app/(auth)/_components/LoginForm";
+import Sidebar from "@/app/(auth)/_components/Sidebar";
 import ReturnHome from "@/components/ReturnHome";
 import jwt from "jsonwebtoken";
 import { cookies } from "next/headers";
-import Image from "next/image";
-import Link from "next/link";
 import { redirect } from "next/navigation";
+import LoginHeaderLogo from "../_components/LoginHeaderLogo";
+import RegisterLink from "../_components/RegisterLink";
 
 export const metadata = {
   title: "FoodBasket | Login",
@@ -21,29 +21,12 @@ const page = () => {
       <div className="flex h-screen items-center justify-center">
         <ReturnHome />
         <div className="left max-h-screen overflow-y-auto px-8 py-8 lg:w-4/12 lg:px-16">
-          <div className="flex justify-center">
-            <Image
-              src="/images/ofb.jpg"
-              height={100}
-              width={100}
-              alt="Image Logo"
-            />
-          </div>
-          <h1 className="text-center text-2xl font-extrabold leading-[70px] sm:text-4xl sm:leading-[70px]">
-            Account Login
-          </h1>
-          <p className="text-center text-sm text-[#00000080] lg:text-base">
-            Welcome back! Sign In to continue
-          </p>
+          <LoginHeaderLogo
+            title="Account Login"
+            desc="Welcome back! Sign In to continue"
+          />
           <LoginForm />
-          <div className="mt-4">
-            <p className="text-sm">
-              Don't have an account?{" "}
-              <Link href="/register" className="font-bold text-purp">
-                Register
-              </Link>
-            </p>
-          </div>
+          <RegisterLink />
         </div>
         <Sidebar
           icon="/icons/profile-white.svg"
@@ -60,22 +43,11 @@ const page = () => {
       return (
         <div className="flex items-center">
           <ReturnHome />
-          <div className="left max-h-screen w-4/12 overflow-y-auto px-16 py-8">
-            <h1 className="text-center text-4xl font-extrabold leading-[70px]">
-              Account Login
-            </h1>
-            <p className="text-center text-[#00000080]">
-              Welcome back! Sign In to continue {err.message}
-            </p>
+          <ReturnHome />
+          <div className="left max-h-screen overflow-y-auto px-8 py-8 lg:w-4/12 lg:px-16">
+            <LoginHeaderLogo />
             <LoginForm />
-            <div className="mt-4">
-              <p className="text-sm">
-                Don't have an account?{" "}
-                <Link href="/register" className="font-bold text-purp">
-                  Register
-                </Link>
-              </p>
-            </div>
+            <RegisterLink />
           </div>
           <Sidebar
             icon="/icons/profile-white.svg"

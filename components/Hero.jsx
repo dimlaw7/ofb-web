@@ -4,13 +4,13 @@ const Hero = () => {
   return (
     <>
       <div className="ellipse">{/* Blur Pink ellipse floating in hero */}</div>
-      <section className="hero relative overflow-hidden bg-[#EAE1F3]">
+      <section className="hero bg-home-hero-bg relative overflow-hidden bg-[#EAE1F3] bg-cover bg-top after:absolute after:left-0 after:right-0 after:top-0 after:h-full after:bg-[rgb(0,0,0,0.6)]">
         <div className="ellipse-yellow">
           {/* Blur Yellow ellipse floating in hero */}
         </div>
         <div className="hero-container container relative z-10 mx-auto mt-24 flex flex-col items-center justify-center px-4 lg:mt-32 lg:flex-row lg:px-8">
           <div className="flex flex-col gap-16 lg:w-8/12">
-            <div className="mb-4 flex flex-col">
+            <div className="mb-4 flex flex-col text-white">
               <h1 className="text mb-8 font-Poppins text-3xl font-bold leading-[3rem] md:text-4xl md:leading-normal">
                 Ticket to year-round savings and abundant{" "}
                 <span className="text-sec">holiday meals.</span>

@@ -4,6 +4,8 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Circles } from "react-loader-spinner";
 import Swal from "sweetalert2";
+import { useForm } from "react-hook-form";
+import GlobalAPI from "@/app/_services/GlobalAPI";
 
 const LoginForm = () => {
   const [data, setData] = useState({
@@ -13,11 +15,17 @@ const LoginForm = () => {
   const [loader, setLoader] = useState(false);
   const [showPassword, setShowPassword] = useState("password");
 
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+
   const router = useRouter();
 
-  const handleForm = async (e) => {
-    e.preventDefault();
-
+  const handleForm = async (data) => {
+    setData({ email: data.email, pass: data.pass });
     if (!data.email || !data.pass) {
       Swal.fire({
         icon: "error",
@@ -31,18 +39,7 @@ const LoginForm = () => {
 
     setLoader((current) => !current); //Show Loader During Request
 
-    const response = await fetch("api/v1/user/login", {
-      method: "POST",
-      credentials: "same-origin",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: data.email,
-        pass: data.pass,
-      }),
-    });
-    const apiData = await response.json();
+    const apiData = await GlobalAPI.AuthenticateUser(data);
 
     apiData.status === "error"
       ? Swal.fire({
@@ -53,49 +50,31 @@ const LoginForm = () => {
           confirmButtonColor: "#DC3545",
         })
       : router.push("/dashboard");
+    setData({ email: "", pass: "" });
     setLoader((current) => !current); //Hide Loader After Response
   };
 
   return (
-    <form className="pt-8" onSubmit={handleForm}>
+    <form className="pt-8" onSubmit={handleSubmit(handleForm)}>
       <label htmlFor="email">
         Email <span className="text-red-500">*</span>
       </label>
       <input
-        required
-        type="email"
-        name="email"
-        id="email"
-        value={data.email}
         className="w-full border border-purple-300 text-base"
         placeholder="Email"
-        onInput={(evt) => {
-          const { name, value } = evt.target;
-          setData({
-            ...data,
-            [name]: value,
-          });
-        }}
+        defaultValue={data?.email}
+        {...register("email")}
       />
       <label htmlFor="pass">
         Password <span className="text-red-500">*</span>
       </label>
       <div className="relative">
         <input
-          required
           type={showPassword}
-          name="pass"
-          id="pass"
-          value={data.pass}
           className="w-full border border-purple-300 text-base"
           placeholder="Password"
-          onInput={(evt) => {
-            const { name, value } = evt.target;
-            setData({
-              ...data,
-              [name]: value,
-            });
-          }}
+          defaultValue={data?.pass}
+          {...register("pass")}
         />
         {showPassword == "password" ? (
           <div
@@ -113,7 +92,6 @@ const LoginForm = () => {
           </div>
         )}
       </div>
-
       <button
         type="submit"
         className="flex w-full justify-center gap-2 bg-purp px-8 py-2 text-sm text-white hover:bg-purple-900 disabled:bg-light"

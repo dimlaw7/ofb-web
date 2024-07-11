@@ -26,7 +26,7 @@ const SavingsCard = async ({ userData }) => {
       : "";
 
     return (
-      <Card className="w-80">
+      <Card className="lg:w-80">
         <CardHeader>
           <CardTitle className="text-lg">Savings Card</CardTitle>
           <CardDescription className="text-sm">
