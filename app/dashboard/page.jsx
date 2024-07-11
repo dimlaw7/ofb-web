@@ -14,39 +14,38 @@ import Transactions from "./_components/Transactions";
 const page = () => {
   const cookieStore = cookies();
   const token = cookieStore.get("token");
-
+  let decoded = null;
   try {
-    const decoded = jwt.verify(token.value, process.env.JWT_SECRET);
-
-    return (
-      <>
-        <section className="navigation bg-grey-bg font-Poppins">
-          <SideNav userData={decoded} />
-          <div className="lg:ml-64">
-            <DashboardHeader userData={decoded} />
-            <DashboardSubHeader userData={decoded} />
-            <DebtWarning />
-            <section className="main my-6 flex w-full flex-col justify-between gap-4 px-4 lg:flex-row lg:px-8">
-              <div className="lt-col lg:w-[700px]">
-                <div className="wallet-package mb-8 flex">
-                  <WalletOverview userData={decoded} />
-                  <PackageType />
-                </div>
-                <Services />
-                <Transactions userData={decoded} />
-              </div>
-              <div className="rt-col flex flex-col gap-4">
-                <SavingsCard userData={decoded} />
-                <Advert />
-              </div>
-            </section>
-          </div>
-        </section>
-      </>
-    );
+    decoded = jwt.verify(token.value, process.env.JWT_SECRET);
   } catch (error) {
     console.log(error.message);
   }
+  return (
+    <>
+      <section className="navigation bg-grey-bg font-Poppins">
+        <SideNav userData={decoded} />
+        <div className="lg:ml-64">
+          <DashboardHeader userData={decoded} />
+          <DashboardSubHeader userData={decoded} />
+          <DebtWarning userData={decoded} />
+          <section className="main my-6 flex w-full flex-col justify-between gap-4 px-4 lg:flex-row lg:px-8">
+            <div className="lt-col lg:w-[700px]">
+              <div className="wallet-package mb-8 flex">
+                <WalletOverview userData={decoded} />
+                <PackageType />
+              </div>
+              <Services />
+              <Transactions userData={decoded} />
+            </div>
+            <div className="rt-col flex flex-col gap-4">
+              <SavingsCard userData={decoded} />
+              <Advert />
+            </div>
+          </section>
+        </div>
+      </section>
+    </>
+  );
 };
 
 export default page;

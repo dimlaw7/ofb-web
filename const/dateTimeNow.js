@@ -1,5 +1,5 @@
 export default function getCurrentDateTime(data) {
-  var now = new Date();
+  const now = new Date();
 
   const year = now.getFullYear();
   const month = String(now.getMonth() + 1).padStart(2, "0");
@@ -9,7 +9,7 @@ export default function getCurrentDateTime(data) {
   const minutes = String(now.getMinutes()).padStart(2, "0");
   const seconds = String(now.getSeconds()).padStart(2, "0");
 
-  return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+  return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`; //returns YYYY-MM-DD HH:MM:SS
 }
 
 export function formatDate(isoDate) {
@@ -36,7 +36,7 @@ export function formatDate(isoDate) {
   const sec = date.getSeconds();
   //return `${months[monthIndex]} ${day} ${year}`;
   return {
-    datestamp: `${months[monthIndex]} ${day} ${year}`,
-    timestamp: `${months[monthIndex]} ${day} ${year} ${hour}:${min}:${sec}`,
+    datestamp: `${months[monthIndex]} ${day} ${year}`, // i.e "Jul 11 2024"
+    timestamp: `${months[monthIndex]} ${day} ${year} ${hour}:${min}:${sec}`, // i.e "Jul 11 2024 14:35:9"
   };
 }

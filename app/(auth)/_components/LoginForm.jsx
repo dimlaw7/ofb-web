@@ -40,13 +40,12 @@ const LoginForm = () => {
     setLoader((current) => !current); //Show Loader During Request
 
     const apiData = await GlobalAPI.AuthenticateUser(data);
-
-    apiData.status === "error"
+    apiData.data.status === "error"
       ? Swal.fire({
           icon: "error",
           iconColor: "#DC3545",
           title: "Login Error",
-          text: apiData.msg,
+          text: apiData.data.msg,
           confirmButtonColor: "#DC3545",
         })
       : router.push("/dashboard");

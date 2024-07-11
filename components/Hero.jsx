@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <>
       <div className="ellipse">{/* Blur Pink ellipse floating in hero */}</div>
-      <section className="hero bg-home-hero-bg relative overflow-hidden bg-[#EAE1F3] bg-cover bg-top after:absolute after:left-0 after:right-0 after:top-0 after:h-full after:bg-[rgb(0,0,0,0.6)]">
+      <section className="hero relative overflow-hidden bg-[#EAE1F3] bg-home-hero-bg bg-cover bg-top after:absolute after:left-0 after:right-0 after:top-0 after:h-full after:bg-[rgb(0,0,0,0.2)]">
         <div className="ellipse-yellow">
           {/* Blur Yellow ellipse floating in hero */}
         </div>

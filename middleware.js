@@ -1,17 +1,41 @@
 import { NextResponse } from "next/server";
-import isAuthenticated from "./hooks/isAuthenticated";
+import { jwtVerify } from "jose";
 
-export function middleware(request) {
-  // Extract JWT token from request cookies
-  const token = request.cookies.get("token");
-  const isLoggedIn = isAuthenticated(token);
-
-  if (!isLoggedIn) {
-    return NextResponse.redirect(new URL("/login", request.url));
+async function verifyJWT(token) {
+  const secret = new TextEncoder().encode(process.env.JWT_SECRET);
+  try {
+    const { payload } = await jwtVerify(token, secret);
+    return payload;
+  } catch (error) {
+    return null;
   }
 }
 
-// See "Matching Paths" below to learn more
+export async function middleware(request) {
+  // Extract JWT token from request cookies
+  const token = request.cookies.get("token");
+
+  if (
+    request.nextUrl.pathname.startsWith("/login") ||
+    request.nextUrl.pathname.startsWith("/register")
+  ) {
+    const decoded = await verifyJWT(token.value);
+    if (token && decoded) {
+      return NextResponse.redirect(new URL("/dashboard", request.url));
+    }
+  }
+
+  if (request.nextUrl.pathname.startsWith("/dashboard")) {
+    if (!token) {
+      return NextResponse.redirect(new URL("/login", request.url));
+    }
+    const decoded = await verifyJWT(token.value);
+    if (!decoded) {
+      return NextResponse.redirect(new URL("/login", request.url));
+    }
+  }
+}
+
 export const config = {
-  matcher: "/dashboard/:path*",
+  matcher: ["/dashboard/:path*", "/login", "/register"],
 };

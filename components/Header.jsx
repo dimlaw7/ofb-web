@@ -9,7 +9,7 @@ import { Menu } from "lucide-react";
 const Header = () => {
   const [navBar, setnavBar] = useState(false);
   return (
-    <header className="fixed left-1/2 top-2 z-50 flex w-[95%] -translate-x-1/2 items-center justify-between rounded-2xl border border-[#EAE1F3] bg-white px-8 py-4 shadow-lg lg:top-4">
+    <header className="fixed left-1/2 top-2 z-50 flex w-[95%] -translate-x-1/2 items-center justify-between rounded-2xl border border-[#EAE1F3] bg-white px-8 shadow-lg lg:top-4">
       <HeaderLogo css="text-purp" />
       <nav
         className={`left-10 flex overflow-y-hidden transition-all max-lg:absolute max-lg:left-2 max-lg:right-2  max-lg:top-[73px] max-lg:flex-col max-lg:bg-inherit lg:gap-8 ${navBar != true ? "max-lg:h-0 max-lg:opacity-0" : "opacity-100 max-lg:h-[50vh]"}`}

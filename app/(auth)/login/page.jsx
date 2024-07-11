@@ -13,53 +13,24 @@ export const metadata = {
 };
 
 const page = () => {
-  const cookieStore = cookies();
-  const token = cookieStore.get("token");
-  if (!token) {
-    // Render login form if token is not present
-    return (
-      <div className="flex h-screen items-center justify-center">
-        <ReturnHome />
-        <div className="left max-h-screen overflow-y-auto px-8 py-8 lg:w-4/12 lg:px-16">
-          <LoginHeaderLogo
-            title="Account Login"
-            desc="Welcome back! Sign In to continue"
-          />
-          <LoginForm />
-          <RegisterLink />
-        </div>
-        <Sidebar
-          icon="/icons/profile-white.svg"
-          title="Jump Right Back In"
-          paragraph="You are one click away from your profile"
+  return (
+    <div className="flex h-screen items-center justify-center">
+      <ReturnHome />
+      <div className="left max-h-screen overflow-y-auto px-8 py-8 lg:w-4/12 lg:px-16">
+        <LoginHeaderLogo
+          title="Account Login"
+          desc="Welcome back! Sign In to continue"
         />
+        <LoginForm />
+        <RegisterLink />
       </div>
-    );
-  } else {
-    // Redirect to dashboard if token is present
-    try {
-      const decoded = jwt.verify(token.value, process.env.JWT_SECRET);
-    } catch (err) {
-      return (
-        <div className="flex items-center">
-          <ReturnHome />
-          <ReturnHome />
-          <div className="left max-h-screen overflow-y-auto px-8 py-8 lg:w-4/12 lg:px-16">
-            <LoginHeaderLogo />
-            <LoginForm />
-            <RegisterLink />
-          </div>
-          <Sidebar
-            icon="/icons/profile-white.svg"
-            title="Jump Right Back In"
-            paragraph="You are one click away from your profile"
-          />
-        </div>
-      );
-    } finally {
-      redirect(`/dashboard`);
-    }
-  }
+      <Sidebar
+        icon="/icons/profile-white.svg"
+        title="Jump Right Back In"
+        paragraph="You are one click away from your profile"
+      />
+    </div>
+  );
 };
 
 export default page;

@@ -11,6 +11,8 @@ import { PiggyBank } from "lucide-react";
 
 const SavingsCard = async ({ userData }) => {
   const { username } = userData;
+  const date = new Date();
+  const currentMonth = date.getMonth() + 1; //Current month
 
   let connection;
   try {
@@ -20,10 +22,7 @@ const SavingsCard = async ({ userData }) => {
       [username],
     );
 
-    const arrOfMonthsCotributed = [];
-    sqlData.length > 0
-      ? sqlData.map((item) => arrOfMonthsCotributed.push(item.month_number))
-      : "";
+    const arrOfMonthsCotributed = sqlData.map((item) => item.month_number);
 
     return (
       <Card className="lg:w-80">
@@ -34,16 +33,19 @@ const SavingsCard = async ({ userData }) => {
           </CardDescription>
         </CardHeader>
         <CardContent className="grid grid-cols-4 gap-2">
-          {months.map((item, index) => (
-            <div
-              key={index}
-              className={`text-am flex flex-col items-center gap-0.5 rounded-sm border p-0.5 ${arrOfMonthsCotributed.includes(index) ? "bg-purple-800 text-white" : "bg-purple-100"} `}
-            >
-              <h3 className="text-xs font-semibold">{item.slice(0, 3)}</h3>
-              <PiggyBank color="#fbbf24" />
-              <h3 className="text-xs font-semibold">5000</h3>
-            </div>
-          ))}
+          {months.map((item, index) => {
+            const isFutureMonth = index > currentMonth;
+            return (
+              <div
+                key={index}
+                className={`text-am flex flex-col items-center gap-0.5 rounded-sm border p-0.5 ${arrOfMonthsCotributed.includes(index) ? "bg-purple-800 text-white" : "bg-purple-100"} ${isFutureMonth ? "opacity-60" : ""} `}
+              >
+                <h3 className="text-xs font-semibold">{item.slice(0, 3)}</h3>
+                <PiggyBank color="#fbbf24" />
+                <h3 className="text-xs font-semibold">5000</h3>
+              </div>
+            );
+          })}
         </CardContent>
       </Card>
     );
