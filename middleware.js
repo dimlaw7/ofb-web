@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { jwtVerify } from "jose";
+import { jwtVerify, SignJWT } from "jose";
 
 async function verifyJWT(token) {
   const secret = new TextEncoder().encode(process.env.JWT_SECRET);
