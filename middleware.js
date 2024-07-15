@@ -19,7 +19,7 @@ export async function middleware(request) {
     request.nextUrl.pathname.startsWith("/login") ||
     request.nextUrl.pathname.startsWith("/register")
   ) {
-    const decoded = await verifyJWT(token.value);
+    const decoded = await verifyJWT(token?.value);
     if (token && decoded) {
       return NextResponse.redirect(new URL("/dashboard", request.url));
     }
