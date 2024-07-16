@@ -1,6 +1,7 @@
 import pool from "@/db";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+const date = new Date();
 
 export async function POST(request) {
   const data = await request.json();
@@ -28,7 +29,7 @@ export async function POST(request) {
   try {
     connection = await pool.getConnection();
     const [results, fields] = await connection.query(
-      "SELECT * FROM `profiles` WHERE email = ?",
+      "SELECT `user`, `firstName`, `lastName`, `security` FROM `profiles` WHERE email = ?",
       [email],
     );
 
@@ -51,7 +52,7 @@ export async function POST(request) {
         username: sqlData.user,
         firstName: sqlData.firstName,
         lastName: sqlData.lastName,
-        wallet: Number.parseFloat(sqlData.wallet),
+        logTime: date.getTime(),
       },
       process.env.JWT_SECRET,
       {

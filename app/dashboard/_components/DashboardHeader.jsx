@@ -1,9 +1,7 @@
-import useRadix from "@/hooks/useRadix";
 import { Bell, Menu, Moon, Sun } from "lucide-react";
 import Image from "next/image";
 
 const DashboardHeader = ({ userData }) => {
-  const wallet = useRadix(userData?.wallet);
   return (
     <header className="flex items-center justify-between self-start border border-b border-purp-60 bg-white px-4 py-4 shadow-md">
       <div className="left-col flex items-center gap-3">
@@ -48,9 +46,6 @@ const DashboardHeader = ({ userData }) => {
               <h6 className="font-sora font-semibold text-purple-950">
                 {userData.username}
               </h6>
-              <span className="wallet text-xs font-semibold text-sec lg:inline">
-                ₦{wallet}
-              </span>
             </div>
           </div>
         </div>

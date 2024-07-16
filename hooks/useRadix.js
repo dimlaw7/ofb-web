@@ -1,4 +1,7 @@
 const useRadix = (int) => {
+  if (typeof int === "string") {
+    int = Number.parseFloat(int);
+  }
   // Split the input value into integer and decimal parts
   let [integerPart, decimalPart] = int.toFixed(2).split(".");
   // Format the integer part with commas for thousands separators

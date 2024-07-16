@@ -34,7 +34,7 @@ const SavingsCard = async ({ userData }) => {
         </CardHeader>
         <CardContent className="grid grid-cols-4 gap-2">
           {months.map((item, index) => {
-            const isFutureMonth = index > currentMonth;
+            const isFutureMonth = index + 1 > currentMonth;
             return (
               <div
                 key={index}

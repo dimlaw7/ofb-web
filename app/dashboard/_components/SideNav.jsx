@@ -14,7 +14,7 @@ const SideNav = ({ userData }) => {
   return (
     <>
       <aside
-        className={`nav fixed bottom-0 ${showSideNav == true ? "" : "max-lg:-left-full"} top-0 z-10 w-full bg-[rgba(0,0,0,0.4)] pt-4 lg:block`}
+        className={`nav fixed bottom-0 top-0 z-10 w-full bg-[rgba(0,0,0,0.4)] pt-4 lg:block lg:w-auto ${showSideNav == true ? "" : "max-lg:-left-full"}`}
         onClick={() => setShowSideNav(!showSideNav)}
       >
         <div

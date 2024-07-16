@@ -1,9 +1,6 @@
-import useRadix from "@/hooks/useRadix";
 import { Moon, Sun } from "lucide-react";
-import React from "react";
 
 const DashboardSubHeader = ({ userData }) => {
-  const wallet = useRadix(userData.wallet);
   return (
     <div className="flex justify-between bg-white p-4 lg:hidden">
       <div className="flex items-center gap-1.5">
@@ -18,9 +15,6 @@ const DashboardSubHeader = ({ userData }) => {
         </div>
       </div>
       <div className="flex items-center gap-4">
-        <span className="wallet text-sec hidden font-semibold lg:inline">
-          ₦{wallet}
-        </span>
         <div className="sun-moon flex items-center rounded-md bg-orange-50 p-1">
           <div className="rounded-md bg-transparent px-2 py-1">
             <Sun size={20} />

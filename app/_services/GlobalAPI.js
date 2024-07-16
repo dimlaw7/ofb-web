@@ -6,4 +6,6 @@ const AuthenticateUser = (data) =>
     pass: data.pass,
   });
 
-export default { AuthenticateUser };
+const getUserDetails = (token) => axios.post("api/v1/user/details", { token });
+
+export default { AuthenticateUser, getUserDetails };

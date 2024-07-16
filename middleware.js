@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { jwtVerify, SignJWT } from "jose";
+import { jwtVerify } from "jose";
 
 async function verifyJWT(token) {
   const secret = new TextEncoder().encode(process.env.JWT_SECRET);
@@ -13,7 +13,7 @@ async function verifyJWT(token) {
 
 export async function middleware(request) {
   // Extract JWT token from request cookies
-  const token = request.cookies.get("token");
+  const token = request.cookies.get("token") || {};
 
   if (
     request.nextUrl.pathname.startsWith("/login") ||
