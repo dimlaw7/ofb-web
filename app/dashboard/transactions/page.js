@@ -7,6 +7,14 @@ import SideNav from "../_components/SideNav";
 import Transactions from "../_components/Transactions";
 
 const page = () => {
+  const cookieStore = cookies();
+  const token = cookieStore.get("token") || {};
+  let decoded = null;
+  try {
+    decoded = jwt.verify(token.value, process.env.JWT_SECRET);
+  } catch (error) {
+    console.log(error.message);
+  }
   return (
     <section className="navigation bg-grey-bg font-Poppins">
       <SideNav userData={decoded} />
