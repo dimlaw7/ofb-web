@@ -6,6 +6,8 @@ const AuthenticateUser = (data) =>
     pass: data.pass,
   });
 
-const getUserDetails = (token) => axios.post("api/v1/user/details", { token });
+const getUserDetails = (token) => axios.post("/api/v1/user/details", { token });
 
-export default { AuthenticateUser, getUserDetails };
+const fetchUserTransactions = () => axios.get("/api/v1/user/transactions");
+
+export default { AuthenticateUser, getUserDetails, fetchUserTransactions };

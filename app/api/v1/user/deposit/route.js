@@ -15,6 +15,7 @@ export async function POST(request) {
     });
   }
 
+  let connection;
   try {
     //Get username from valied cookie
     const cookieData = jwt.verify(token.value, process.env.JWT_SECRET);
@@ -25,14 +26,14 @@ export async function POST(request) {
     let { amount, month } = requestData;
     amount = amount.replace(/[^\d.]+/g, "");
     amount = parseFloat(amount);
-
     //Get payload from user profile in database
-    const [sqlData] = await pool.query(
+    connection = await pool.getConnection();
+    const [sqlData] = await connection.query(
       "SELECT * FROM `profiles` WHERE user = ?",
       [username],
     );
 
-    //Insert transaction details
+    // Insert transaction details
     const sql =
       "INSERT INTO `transactions`(`transaction_type`, `transaction_date`, `member_id`, `transaction_amount`, `month_ref`, `payment_method`, `transaction_status`) VALUES (?,?,?,?,?,?,?)";
     const values = [
@@ -45,11 +46,14 @@ export async function POST(request) {
       "Pending",
     ];
 
-    const [result] = await pool.query(sql, values);
+    const [result] = await connection.query(sql, values);
 
-    //console.log();
     return Response.json({ status: "ok", msg: "Deposit Created" });
   } catch (err) {
     return Response.json({ status: "error", msg: err.message });
+  } finally {
+    if (connection) {
+      connection.release();
+    }
   }
 }

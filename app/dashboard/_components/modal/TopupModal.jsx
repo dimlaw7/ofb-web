@@ -11,11 +11,16 @@ const TopupModal = ({ closeModal }) => {
   const currentMonth = date.getMonth();
   const [depositValue, setDepositValue] = useState({
     amount: "",
-    month: currentMonth,
+    month: currentMonth + 1,
   });
   const [loader, setLoader] = useState(false);
   const [step, setStep] = useState(-1);
 
+  /**
+   * Handles the input for amount field by removing non-digit characters,
+   * formatting the integer part with commas as thousands separators, and
+   * preserving the decimal part if present.
+   */
   const handleAmount = (e) => {
     // Remove non-digit characters from input
     let inputValue = e.target.value.replace(/[^\d.]+|(?<=\.\d*)\./g, "");
@@ -37,8 +42,11 @@ const TopupModal = ({ closeModal }) => {
     setDepositValue({ ...depositValue, amount: inputValue });
   };
 
+  /**
+   * Handles the input for month field
+   */
   const handleMonth = (e) => {
-    const m = e.target.value;
+    const m = parseInt(e.target.value);
     setDepositValue({ ...depositValue, month: m });
   };
 
@@ -47,6 +55,9 @@ const TopupModal = ({ closeModal }) => {
     setStep(0);
   };
 
+  /**
+   * Submits a deposit request to the server and updates the application state based on the response.
+   */
   const submitDeposit = async (e) => {
     e.preventDefault();
     setLoader(true);

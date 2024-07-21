@@ -52,7 +52,7 @@ const page = async ({ params, searchParams }) => {
           const [updateContributions] = await connection.query(
             "INSERT INTO `contributions`(`month`, `month_number`, `profile_id`, `year`, `datetime`) VALUES (?,?,?,?,?)",
             [
-              months[data.month_ref],
+              months[data.month_ref - 1],
               data.month_ref,
               data.userID,
               2024,

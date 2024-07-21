@@ -38,7 +38,7 @@ const SavingsCard = async ({ userData }) => {
             return (
               <div
                 key={index}
-                className={`text-am flex flex-col items-center gap-0.5 rounded-sm border p-0.5 ${arrOfMonthsCotributed.includes(index) ? "bg-purple-800 text-white" : "bg-purple-100"} ${isFutureMonth ? "opacity-60" : ""} `}
+                className={`text-am flex flex-col items-center gap-0.5 rounded-sm border p-0.5 ${arrOfMonthsCotributed.includes(index + 1) ? "bg-purple-800 text-white" : "bg-purple-100"} ${isFutureMonth ? "opacity-60" : ""} `}
               >
                 <h3 className="text-xs font-semibold">{item.slice(0, 3)}</h3>
                 <PiggyBank color="#fbbf24" />
