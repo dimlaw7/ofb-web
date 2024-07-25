@@ -121,7 +121,12 @@ export const dashboardNavLinks = [
     url: "/dashboard/admin",
     icon: ShieldEllipsis,
   },
-  { title: "Logout", url: "/api/v1/user/logout", icon: LogOut },
+  {
+    title: "Logout",
+    url: "/api/v1/user/logout",
+    icon: LogOut,
+    prefetch: false,
+  },
 ];
 
 export const bankInfo = [

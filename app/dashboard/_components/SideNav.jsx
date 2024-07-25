@@ -65,7 +65,11 @@ const SideNav = ({ userData }) => {
                 key={index}
                 className={`${pathname === item.url ? "bg-purp-60" : ""} px-9 py-4 text-white hover:outline hover:outline-2 hover:outline-purp-60`}
               >
-                <Link href={item.url} className="flex items-center">
+                <Link
+                  href={item.url}
+                  className="flex items-center"
+                  prefetch={item?.prefetch}
+                >
                   <item.icon />
                   <span className="ml-4 text-sm ">{item.title}</span>
                 </Link>
