@@ -25,7 +25,7 @@ const Aeonik = localFont({
 const HeroNew = () => {
   return (
     <section className={`hero overflow-hidden ${Aeonik.className}`}>
-      <div className="relative h-screen pt-32 md:pt-48">
+      <div className="relative h-screen pt-48 md:pt-48">
         <div className="hero-imgs absolute top-0 -z-10 h-screen">
           <Image
             src="/images/sky.jpg"
@@ -43,7 +43,7 @@ const HeroNew = () => {
           />
         </div>
         <section className="hero-text container mx-auto flex flex-col gap-8 px-4 text-white md:py-4">
-          <h1 className="max-w-[1000px] text-3xl font-black md:text-7xl">
+          <h1 className="max-w-[940px] text-3xl font-black md:text-7xl">
             Money And Grocery The Right Way!
           </h1>
           <span>

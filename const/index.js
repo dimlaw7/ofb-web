@@ -114,7 +114,7 @@ export const dashboardNavLinks = [
     url: "/dashboard/transactions",
     icon: ArrowLeftRight,
   },
-  { title: "Budget", url: "/dashboard", icon: BarChartBig },
+  { title: "Budget", url: "/dashboard/budget", icon: BarChartBig },
   { title: "Settings", url: "/dashboard/settings", icon: Settings },
   {
     title: "Admin Panel",
