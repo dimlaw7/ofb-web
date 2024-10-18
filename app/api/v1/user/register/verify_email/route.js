@@ -14,11 +14,16 @@ export async function POST(request) {
     return Response.json({ status: "error", msg: "Invalid email address" });
   }
 
+  let connection;
+  connection = await pool.getConnection();
   //Return error response If Email is registered
-  const [rows, fields] = await pool.query(
+  const [rows, fields] = await connection.query(
     "SELECT * FROM profiles WHERE email = ?",
     [email],
   );
+  if (connection) {
+    connection.release();
+  }
   if (rows.length > 0) {
     return Response.json({
       status: "error",

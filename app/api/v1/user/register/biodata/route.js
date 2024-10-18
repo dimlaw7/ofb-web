@@ -29,9 +29,11 @@ export async function POST(request) {
   if (pass != pass2) {
     error.push("Passwords do not match");
   }
+  let connection;
+  connection = await pool.getConnection();
   //Username Already Exist
   try {
-    const [checkUsername] = await pool.query(
+    const [checkUsername] = await connection.query(
       "SELECT * FROM `profiles` WHERE `user`=?",
       [uname],
     );
@@ -59,9 +61,9 @@ export async function POST(request) {
     );
 
     const hashedPassword = await bcrypt.hash(pass, 10);
-    const [results, fields] = await pool.query(
-      "INSERT INTO `profiles` (`user`, `firstName`, `lastName`, `email`, `security`) VALUES (?, ?, ?, ?, ?)",
-      [uname, fname, lname, email, hashedPassword],
+    const [results, fields] = await connection.query(
+      "INSERT INTO `profiles` (`user`, `firstName`, `lastName`, `email`, `security`, `wallet`) VALUES (?, ?, ?, ?, ?, ?)",
+      [uname, fname, lname, email, hashedPassword, 0.0],
     );
 
     return NextResponse.json(
@@ -79,5 +81,7 @@ export async function POST(request) {
     );
   } catch (err) {
     return Response.json({ status: "error", msg: err.message });
+  } finally {
+    if (connection) connection.release();
   }
 }
