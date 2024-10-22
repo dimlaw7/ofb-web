@@ -40,17 +40,29 @@ const LoginForm = () => {
     setLoader((current) => !current); //Show Loader During Request
 
     const apiData = await GlobalAPI.AuthenticateUser(data);
-    apiData.data.status === "error"
-      ? Swal.fire({
-          icon: "error",
-          iconColor: "#DC3545",
-          title: "Login Error",
-          text: apiData.data.msg,
-          confirmButtonColor: "#DC3545",
-        })
-      : router.push("/dashboard");
-    setData({ email: "", pass: "" });
-    setLoader((current) => !current); //Hide Loader After Response
+
+    if (apiData.data.status === "error") {
+      Swal.fire({
+        icon: "error",
+        iconColor: "#DC3545",
+        title: "Login Error",
+        text: apiData.data.msg,
+        confirmButtonColor: "#DC3545",
+      });
+    } else {
+      // On successful login, trigger a success message
+      Swal.fire({
+        icon: "success",
+        title: "Success",
+        text: "Login successful! Redirecting...",
+        confirmButtonColor: "#28a745",
+      });
+
+      // Redirect the user to dashboard after successful login
+      router.push("/dashboard");
+    }
+
+    setLoader((current) => !current); // Hide loader after response
   };
 
   return (
