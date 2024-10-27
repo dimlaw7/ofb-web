@@ -38,9 +38,9 @@ const DashboardServices = () => {
           </div>
         </div>
       </section>
-      <section className="border bg-white px-4 py-8 lg:hidden">
-        <h4 className="font-semibold">What would you like to do?</h4>
-        <div className="grid grid-cols-4 gap-4">
+      <section className="border bg-white px-4 py-6 lg:hidden">
+        <h4 className="text-sm font-semibold">What would you like to do?</h4>
+        <div className="mt-6 grid grid-cols-4 gap-4">
           <div className="cols flex flex-col items-center">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100">
               <BookDown size={14} />

@@ -25,11 +25,11 @@ const Transactions = () => {
     getTransactions();
   }, []);
 
-  if (transactions.length > 0) {
+  if (transactions?.length > 0) {
     return (
-      <section className="activity my-8 border bg-white px-4 py-8 lg:mx-0">
+      <section className="activity my-8 border bg-white px-4 py-6 lg:mx-0">
         <div className="transactions">
-          <h1 className="font-bold">Transaction Slips</h1>
+          <h1 className="text-sm font-semibold">Transactions</h1>
           {!loading ? (
             transactions.map((value, index) => (
               <ActivitySlip
