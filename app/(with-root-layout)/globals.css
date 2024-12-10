@@ -73,6 +73,9 @@
   body {
     @apply bg-background text-foreground;
   }
+  select {
+    -webkit-appearance: none; /* Disable default iOS styling */
+  }
 }
 
 @layer components {
@@ -127,6 +130,10 @@
   animation-name: rotate-user;
   animation-duration: 15s;
   animation-iteration-count: infinite;
+}
+
+.services > ul > li > span {
+  @apply mt-1;
 }
 
 @keyframes rotate-send {
