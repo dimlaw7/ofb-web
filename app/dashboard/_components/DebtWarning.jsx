@@ -21,7 +21,7 @@ const DebtWarning = async ({ userData }) => {
         <div className="news mx-4 mt-4 overflow-hidden rounded bg-red-600 p-2 text-sm font-light text-white">
           <span className="text whitespace-nowrap">
             You have missed contribution deadlines for {monthsDefaulted}{" "}
-            month(s)! Check your savings card for details.
+            month(s)!
           </span>
         </div>
       );
